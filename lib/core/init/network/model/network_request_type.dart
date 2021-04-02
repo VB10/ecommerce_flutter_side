@@ -1,0 +1,4 @@
+enum NetworkRequestType {
+  GET,
+  POST,
+}
