@@ -1,19 +1,18 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:gow_mobile/core/extensions/context_extension.dart';
-import 'package:gow_mobile/core/extensions/string_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../extensions/context_extension.dart';
+import '../../extensions/string_extension.dart';
 import '../image/icon_image.dart';
 
 class IconFormTextField extends StatelessWidget {
   final String label;
-  final String iconPath;
-  final bool secure;
-  final String Function(String value) validator;
-  final TextEditingController controller;
-  final Widget suffixIcon;
+  final String? iconPath;
+  final bool? secure;
+  final String? Function(String? value)? validator;
+  final TextEditingController? controller;
+  final Widget? suffixIcon;
 
-  IconFormTextField({Key key, @required this.label, this.iconPath, this.secure, this.validator, this.controller, this.suffixIcon}) : super(key: key);
+  IconFormTextField({Key? key, required this.label, this.iconPath, this.secure, this.validator, this.controller, this.suffixIcon}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(

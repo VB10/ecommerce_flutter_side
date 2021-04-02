@@ -1,6 +1,6 @@
 class AppIcon {
-  static AppIcon _instance;
-  static AppIcon get instance {
+  static AppIcon? _instance;
+  static AppIcon? get instance {
     if (_instance == null) {
       _instance = AppIcon._init();
     }

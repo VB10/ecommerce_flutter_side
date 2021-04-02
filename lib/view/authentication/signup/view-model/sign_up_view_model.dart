@@ -1,6 +1,6 @@
-import 'package:gow_mobile/core/init/app/base/base_view_model.dart';
-import 'package:gow_mobile/view/authentication/signup/model/sign_up_model.dart';
-import 'package:gow_mobile/view/authentication/signup/service/sign_up_service.dart';
+import '../../../../core/init/app/base/base_view_model.dart';
+import '../model/sign_up_model.dart';
+import '../service/sign_up_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
 
@@ -38,7 +38,7 @@ abstract class _SignUpViewModelBase with Store, BaseViewModel {
 
   @action
   bool checkSignUpForm() {
-    if (signUpFormKey.currentState.validate()) {
+    if (signUpFormKey.currentState!.validate()) {
       return true;
     } else {
       formAutoValidate = true;

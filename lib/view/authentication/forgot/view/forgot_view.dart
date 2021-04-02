@@ -1,9 +1,10 @@
-import 'package:gow_mobile/core/components/input/icon_form_field.dart';
-import 'package:gow_mobile/core/components/row/login_form_row.dart';
-import 'package:gow_mobile/core/extensions/context_extension.dart';
-import 'package:gow_mobile/core/init/constants/image_constants.dart';
-import 'package:gow_mobile/view/widget/buttons/sign_up.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/components/input/icon_form_field.dart';
+import '../../../../core/components/row/login_form_row.dart';
+import '../../../../core/extensions/context_extension.dart';
+import '../../../../core/init/constants/image_constants.dart';
+import '../../../widget/buttons/sign_up.dart';
 
 class ForgotView extends StatefulWidget {
   @override
@@ -34,7 +35,7 @@ class _ForgotViewState extends State<ForgotView> {
     );
   }
 
-  TextStyle get titleTextStyle => context.theme.subtitle2.copyWith(fontWeight: FontWeight.w200);
+  TextStyle get titleTextStyle => context.theme.subtitle2!.copyWith(fontWeight: FontWeight.w200);
 
   Card get buildCardForm {
     return Card(
@@ -43,7 +44,7 @@ class _ForgotViewState extends State<ForgotView> {
         children: [
           IconFormTextField(
             label: " EMAIL",
-            iconPath: ImageConstatns.instance.mailSVG,
+            iconPath: ImageConstatns.instance!.mailSVG,
           ),
         ],
       )),

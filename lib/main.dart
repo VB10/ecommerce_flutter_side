@@ -8,7 +8,7 @@ import 'view/authentication/tab/authentication_tab_view.dart';
 
 void main() => runApp(EasyLocalization(
     child: MyApp(),
-    supportedLocales: LanguageConstants.instance.supportedLocales,
+    supportedLocales: LanguageConstants.instance!.supportedLocales,
     path: AppConstants.ASSETS_LANG_PATH));
 
 class MyApp extends StatelessWidget {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: AuthenticationTabView(),
-      theme: ApplicationTheme.instance.lightTheme,
+      theme: ApplicationTheme.instance!.lightTheme,
     );
   }
 }

@@ -1,18 +1,18 @@
-import 'package:gow_mobile/core/init/network/model/network_base_model.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:vexana/vexana.dart';
 
 part 'login_model.g.dart';
 
-@JsonSerializable(nullable: false)
-class LoginModel extends NetworkBaseModel<LoginModel> {
-  final String email;
-  final String password;
+@JsonSerializable()
+class LoginModel extends INetworkModel<LoginModel> {
+  final String? email;
+  final String? password;
 
-  LoginModel(this.email, this.password);
-
-  @override
-  LoginModel fromJson(Map<String, Object> json) => _$LoginModelFromJson(json);
+  LoginModel({this.email, this.password});
 
   @override
-  Map<String, Object> toJson() => _$LoginModelToJson(this);
+  LoginModel fromJson(Map<String, dynamic> json) => _$LoginModelFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$LoginModelToJson(this);
 }

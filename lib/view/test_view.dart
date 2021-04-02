@@ -1,6 +1,7 @@
-import 'package:gow_mobile/core/components/button/fill_button_widget.dart';
-import 'package:gow_mobile/core/components/image/circle_image.dart';
 import 'package:flutter/material.dart';
+
+import '../core/components/button/fill_button_widget.dart';
+import '../core/components/image/circle_image.dart';
 
 class TestView extends StatefulWidget {
   @override

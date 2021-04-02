@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LanguageConstants {
-  static LanguageConstants _instance;
-  static LanguageConstants get instance {
+  static LanguageConstants? _instance;
+  static LanguageConstants? get instance {
     if (_instance == null) {
       _instance = LanguageConstants._init();
     }

@@ -1,6 +1,6 @@
 class RegexConstants {
-  static RegexConstants _instance;
-  static RegexConstants get instance {
+  static RegexConstants? _instance;
+  static RegexConstants? get instance {
     if (_instance == null) {
       _instance = RegexConstants._init();
     }

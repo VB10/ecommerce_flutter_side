@@ -1,11 +1,11 @@
-import 'package:gow_mobile/core/init/app/base/base_view_model.dart';
-import 'package:gow_mobile/core/init/network/model/network_base_error.dart';
-import 'package:gow_mobile/view/authentication/login/model/login_model.dart';
-import 'package:gow_mobile/view/authentication/login/model/user_model.dart';
-import 'package:gow_mobile/view/authentication/login/service/login_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
+
+import '../../../../core/init/app/base/base_view_model.dart';
+import '../model/login_model.dart';
+import '../model/user_model.dart';
+import '../service/login_service.dart';
 
 part 'login_view_model.g.dart';
 
@@ -22,7 +22,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   TextEditingController userNameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  LoginModel get loginModel => LoginModel(userNameController.text, passwordController.text);
+  LoginModel get loginModel => LoginModel(email: userNameController.text, password: passwordController.text);
 
   @observable
   String description = '';
@@ -35,16 +35,16 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
     if (checkSignUpForm()) {
       final response = await _service.loginUserRequest(loginModel);
 
-      if (response is UserModel == false) {
-        final errorModel = response as NetworkBaseError;
-        loginScaffoldKey.currentState.showSnackBar(SnackBar(content: Text(errorModel.message)));
-      }
+      // if (response is UserModel == false) {
+      //   final errorModel = response as NetworkBaseError;
+      //   loginScaffoldKey.currentState!.showSnackBar(SnackBar(content: Text(errorModel.message!)));
+      // }
     }
   }
 
   @action
   bool checkSignUpForm() {
-    if (loginFormKey.currentState.validate()) {
+    if (loginFormKey.currentState!.validate()) {
       return true;
     } else {
       formAutoValidate = true;

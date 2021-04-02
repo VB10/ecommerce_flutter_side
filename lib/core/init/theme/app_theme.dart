@@ -1,9 +1,10 @@
-import 'package:gow_mobile/core/init/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
+import 'color_theme.dart';
+
 class ApplicationTheme {
-  static ApplicationTheme _instance;
-  static ApplicationTheme get instance {
+  static ApplicationTheme? _instance;
+  static ApplicationTheme? get instance {
     if (_instance == null) {
       _instance = ApplicationTheme._init();
     }
@@ -18,14 +19,14 @@ class ApplicationTheme {
       cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
       scaffoldBackgroundColor: ColorTheme.BACKGROUND_COLOR,
       inputDecorationTheme: InputDecorationTheme(
-        labelStyle: textTheme.headline4.copyWith(
+        labelStyle: textTheme.headline4!.copyWith(
           color: ColorTheme.TEXT_LOGIN_COLOR.withOpacity(0.5),
           letterSpacing: 1,
         ),
       ),
       textTheme: TextTheme(
-        headline2: textTheme.headline2.copyWith(color: ColorTheme.BACKGROUND_COLOR),
-        headline4: textTheme.headline4.copyWith(color: ColorTheme.BACKGROUND_COLOR),
+        headline2: textTheme.headline2!.copyWith(color: ColorTheme.BACKGROUND_COLOR),
+        headline4: textTheme.headline4!.copyWith(color: ColorTheme.BACKGROUND_COLOR),
       ),
       buttonTheme: ButtonThemeData(
         colorScheme: ColorScheme.light(

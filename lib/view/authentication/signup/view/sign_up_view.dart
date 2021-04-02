@@ -19,7 +19,7 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
-  SignUpViewModel _signUpViewModel;
+  late SignUpViewModel _signUpViewModel;
 
   @override
   Widget build(BuildContext context) {
@@ -58,27 +58,27 @@ class _SignUpViewState extends State<SignUpView> {
       child: Observer(
         builder: (_) => Form(
             key: _signUpViewModel.signUpFormKey,
-            autovalidate: _signUpViewModel.formAutoValidate,
+            autovalidateMode: _signUpViewModel.formAutoValidate ? AutovalidateMode.always : AutovalidateMode.disabled,
             child: Column(
               children: [
                 IconFormTextField(
                   label: LocaleKeys.auth_email,
                   controller: _signUpViewModel.emailController,
-                  iconPath: ImageConstatns.instance.mailSVG,
-                  validator: (value) => value.isValidEmail,
+                  iconPath: ImageConstatns.instance!.mailSVG,
+                  validator: (value) => value?.isValidEmail,
                 ),
                 IconFormTextField(
                   label: LocaleKeys.auth_userName,
                   controller: _signUpViewModel.userNameController,
-                  iconPath: ImageConstatns.instance.profileSVG,
-                  validator: (value) => value.isValidUserName,
+                  iconPath: ImageConstatns.instance!.profileSVG,
+                  validator: (value) => value?.isValidUserName,
                 ),
                 IconFormTextField(
                   label: LocaleKeys.auth_password,
                   controller: _signUpViewModel.passwordController,
-                  iconPath: ImageConstatns.instance.passwordSVG,
+                  iconPath: ImageConstatns.instance!.passwordSVG,
                   secure: true,
-                  validator: (value) => value.isValidPassword,
+                  validator: (value) => value?.isValidPassword,
                 ),
               ],
             )),
@@ -86,11 +86,9 @@ class _SignUpViewState extends State<SignUpView> {
     );
   }
 
-  TextStyle get policyTextStyle =>
-      context.theme.subtitle2.copyWith(fontWeight: FontWeight.w200);
+  TextStyle get policyTextStyle => context.theme.subtitle2!.copyWith(fontWeight: FontWeight.w200);
 
-  TextStyle get policyPressedTextStyle =>
-      policyTextStyle.copyWith(color: ColorTheme.RED_BUTTON);
+  TextStyle get policyPressedTextStyle => policyTextStyle.copyWith(color: ColorTheme.RED_BUTTON);
 
   Padding buildLicanceArea() {
     return Padding(
@@ -98,15 +96,11 @@ class _SignUpViewState extends State<SignUpView> {
       child: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(style: policyTextStyle, children: [
-            TextSpan(
-                text: "By creating an account, you agree to our ",
-                children: [
-                  TextSpan(
-                      text: "Terms of Service ", style: policyPressedTextStyle),
-                  TextSpan(text: "and "),
-                  TextSpan(
-                      text: "Privacy Policy", style: policyPressedTextStyle)
-                ])
+            TextSpan(text: "By creating an account, you agree to our ", children: [
+              TextSpan(text: "Terms of Service ", style: policyPressedTextStyle),
+              TextSpan(text: "and "),
+              TextSpan(text: "Privacy Policy", style: policyPressedTextStyle)
+            ])
           ])),
     );
   }

@@ -1,15 +1,15 @@
-import 'package:gow_mobile/core/components/container/space_height_container.dart';
-import 'package:gow_mobile/core/extensions/string_extension.dart';
-import 'package:gow_mobile/core/init/lang/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
+import '../../../../core/components/container/space_height_container.dart';
 import '../../../../core/components/input/icon_form_field.dart';
 import '../../../../core/components/row/login_form_row.dart';
 import '../../../../core/components/span/text_span_red.dart';
 import '../../../../core/extensions/context_extension.dart';
+import '../../../../core/extensions/string_extension.dart';
 import '../../../../core/init/app/base/base_view.dart';
 import '../../../../core/init/constants/image_constants.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
 import '../../../widget/buttons/sign_up.dart';
 import '../view-model/login_view_model.dart';
 
@@ -19,7 +19,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  LoginViewModel _loginViewModel;
+  late LoginViewModel _loginViewModel;
 
   @override
   Widget build(BuildContext context) {
@@ -63,22 +63,22 @@ class _LoginViewState extends State<LoginView> {
     return Observer(
       builder: (context) => Card(
         child: Form(
-            autovalidate: _loginViewModel.formAutoValidate,
+            autovalidateMode: _loginViewModel.formAutoValidate ? AutovalidateMode.always : AutovalidateMode.disabled,
             key: _loginViewModel.loginFormKey,
             child: Column(
               children: [
                 IconFormTextField(
                   controller: _loginViewModel.userNameController,
                   label: LocaleKeys.auth_email,
-                  iconPath: ImageConstatns.instance.profileSVG,
-                  validator: (value) => value.isValidEmail,
+                  iconPath: ImageConstatns.instance!.profileSVG,
+                  validator: (value) => value?.isValidEmail,
                 ),
                 IconFormTextField(
                   controller: _loginViewModel.passwordController,
                   label: LocaleKeys.auth_password,
-                  iconPath: ImageConstatns.instance.passwordSVG,
+                  iconPath: ImageConstatns.instance!.passwordSVG,
                   secure: true,
-                  validator: (value) => value.isValidPassword,
+                  validator: (value) => value?.isValidPassword,
                 ),
               ],
             )),
@@ -86,7 +86,7 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 
-  TextStyle get policyTextStyle => _loginViewModel.context.theme.subtitle2.copyWith(fontWeight: FontWeight.w200);
+  TextStyle get policyTextStyle => _loginViewModel.context.theme.subtitle2!.copyWith(fontWeight: FontWeight.w200);
 
   Padding get buildHaveAccount {
     return Padding(

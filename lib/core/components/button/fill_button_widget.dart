@@ -1,14 +1,14 @@
-import 'package:gow_mobile/core/extensions/context_extension.dart';
-import 'package:gow_mobile/core/init/app/app_widget_helper.dart';
+import '../../extensions/context_extension.dart';
+import '../../init/app/app_widget_helper.dart';
 import 'package:flutter/material.dart';
 
 class FullWidthButton extends StatelessWidget {
-  final Color color;
-  final String title;
-  final Widget icon;
-  final VoidCallback onPressed;
+  final Color? color;
+  final String? title;
+  final Widget? icon;
+  final VoidCallback? onPressed;
 
-  const FullWidthButton({Key key, this.color, this.title, this.icon, this.onPressed}) : super(key: key);
+  const FullWidthButton({Key? key, this.color, this.title, this.icon, this.onPressed}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return buildRaisedButton(context);
@@ -22,7 +22,7 @@ class FullWidthButton extends StatelessWidget {
         child: Container(
           width: context.width,
           height: context.height * 0.05,
-          constraints: AppWidgetHelper.instance.buttonBoxConstraint,
+          constraints: AppWidgetHelper.instance!.buttonBoxConstraint,
           child: Stack(
             children: [buildCenterTitle(context), buildPositionedRightButton(context)],
           ),
@@ -43,7 +43,7 @@ class FullWidthButton extends StatelessWidget {
   Widget get buildRightIcon => icon ?? Icon(Icons.keyboard_arrow_right);
 
   Text buildTextTitle(BuildContext context) => Text(
-        title,
-        style: Theme.of(context).textTheme.subtitle2.copyWith(color: Colors.white, fontWeight: FontWeight.w700),
+        title!,
+        style: Theme.of(context).textTheme.subtitle2!.copyWith(color: Colors.white, fontWeight: FontWeight.w700),
       );
 }

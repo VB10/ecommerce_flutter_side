@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
 abstract class BaseViewModel {
-  BuildContext context;
+  late BuildContext context;
   void setContext(BuildContext context);
 }

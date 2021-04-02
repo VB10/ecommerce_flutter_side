@@ -1,8 +1,8 @@
-import 'package:gow_mobile/core/extensions/string_extension.dart';
+import '../../extensions/string_extension.dart';
 
 class ImageConstatns {
-  static ImageConstatns _instance;
-  static ImageConstatns get instance {
+  static ImageConstatns? _instance;
+  static ImageConstatns? get instance {
     if (_instance == null) {
       _instance = ImageConstatns._init();
     }

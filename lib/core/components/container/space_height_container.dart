@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SpaceHeightBox extends StatelessWidget {
   final double height;
 
-  const SpaceHeightBox({Key key, this.height})
+  const SpaceHeightBox({Key? key, required this.height})
       : assert(height > 0 && height <= 1),
         super(key: key);
   @override
