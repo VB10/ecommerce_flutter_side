@@ -8,16 +8,11 @@ class NetworkConfig {
   late BaseOptions options;
 
   NetworkConfig() {
-    if (Platform.isIOS) {
-      baseUrl = "http://localhost:4000/";
+    if (Platform.isAndroid) {
+      baseUrl = 'http://10.0.2.2:3000/';
     } else {
-      baseUrl = "http://10.0.2.2:4000/";
+      baseUrl = 'http://localhost:3000/';
     }
-    options = BaseOptions(
-      baseUrl: baseUrl,
-      connectTimeout: 5000,
-      receiveTimeout: 3000,
-      contentType: ContentType.json.value,
-    );
+    options = BaseOptions(baseUrl: baseUrl);
   }
 }

@@ -4,11 +4,10 @@ import 'color_theme.dart';
 
 class ApplicationTheme {
   static ApplicationTheme? _instance;
-  static ApplicationTheme? get instance {
-    if (_instance == null) {
-      _instance = ApplicationTheme._init();
-    }
-    return _instance;
+  static ApplicationTheme get instance {
+    _instance ??= ApplicationTheme._init();
+
+    return _instance!;
   }
 
   final textTheme = ThemeData.light().textTheme;
