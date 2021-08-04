@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../../../../core/components/container/space_height_container.dart';
-import '../../../../core/components/input/icon_form_field.dart';
 import '../../../../core/components/row/login_form_row.dart';
 import '../../../../core/components/span/text_span_red.dart';
 import '../../../../core/extensions/context_extension.dart';
-import '../../../../core/extensions/string_extension.dart';
 import '../../../../core/init/app/base/base_view.dart';
-import '../../../../core/init/constants/image_constants.dart';
-import '../../../../core/init/lang/locale_keys.g.dart';
-import '../../../widget/buttons/sign_up.dart';
+import '../../../../product/widget/form/login_form_widget.dart';
 import '../view-model/login_view_model.dart';
 
 class LoginView extends StatefulWidget {
@@ -47,41 +42,11 @@ class _LoginViewState extends State<LoginView> {
         direction: Axis.horizontal,
         children: [
           SpaceHeightBox(height: 0.01),
-          buildCardForm,
-          SignUpButton(
-            onPressed: () {
-              _loginViewModel.checkUserLoginRequest();
-            },
-          ).toLoginButton,
+          LoginFormWidget(
+            onComplete: (model) {},
+          ),
           buildHaveAccount,
         ],
-      ),
-    );
-  }
-
-  Widget get buildCardForm {
-    return Observer(
-      builder: (context) => Card(
-        child: Form(
-            autovalidateMode: _loginViewModel.formAutoValidate ? AutovalidateMode.always : AutovalidateMode.disabled,
-            key: _loginViewModel.loginFormKey,
-            child: Column(
-              children: [
-                IconFormTextField(
-                  controller: _loginViewModel.userNameController,
-                  label: LocaleKeys.auth_email,
-                  iconPath: ImageConstatns.instance!.profileSVG,
-                  validator: (value) => value?.isValidEmail,
-                ),
-                IconFormTextField(
-                  controller: _loginViewModel.passwordController,
-                  label: LocaleKeys.auth_password,
-                  iconPath: ImageConstatns.instance!.passwordSVG,
-                  secure: true,
-                  validator: (value) => value?.isValidPassword,
-                ),
-              ],
-            )),
       ),
     );
   }

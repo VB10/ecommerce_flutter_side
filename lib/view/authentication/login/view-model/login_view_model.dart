@@ -3,48 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../core/init/app/base/base_view_model.dart';
-import '../model/login_model.dart';
 
 part 'login_view_model.g.dart';
 
 class LoginViewModel = _LoginViewModelBase with _$LoginViewModel;
 
 abstract class _LoginViewModelBase with Store, BaseViewModel {
-  GlobalKey<FormState> loginFormKey = GlobalKey();
   GlobalKey<ScaffoldState> loginScaffoldKey = GlobalKey();
-  // final LoginService _service = LoginService();
-
-  @observable
-  bool formAutoValidate = false;
-
-  TextEditingController userNameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-
-  LoginModel get loginModel => LoginModel(email: userNameController.text, password: passwordController.text);
 
   @observable
   String description = '';
 
-  void setContext(BuildContext context) {
-    this.context = context;
-  }
+  @override
+  void setContext(BuildContext context) => this.context = context;
+  void init() {}
 
-  Future<void> checkUserLoginRequest() async {
-    if (checkSignUpForm()) {
-      // if (response is UserModel == false) {
-      //   final errorModel = response as NetworkBaseError;
-      //   loginScaffoldKey.currentState!.showSnackBar(SnackBar(content: Text(errorModel.message!)));
-      // }
-    }
-  }
-
-  @action
-  bool checkSignUpForm() {
-    if (loginFormKey.currentState!.validate()) {
-      return true;
-    } else {
-      formAutoValidate = true;
-      return false;
-    }
-  }
+  Future<void> checkUserLoginRequest() async {}
 }
