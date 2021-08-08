@@ -1,0 +1,11 @@
+{
+    "tab":{
+        "signUp":"Sign Up",
+        "login":"Login",
+        "forgot":"Forgot Password"
+    },
+    "login":{
+        "dontHaveAccount":"Don't have an account? Swipe right to",
+        "createAccount":"Create a new account"
+    }
+}

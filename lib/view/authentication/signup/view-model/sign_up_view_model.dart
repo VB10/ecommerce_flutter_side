@@ -22,15 +22,14 @@ abstract class _SignUpViewModelBase with Store, BaseViewModel {
 
   @observable
   bool formAutoValidate = false;
-
-  void setContext(BuildContext context) {
-    this.context = context;
-  }
+  @override
+  void setContext(BuildContext context) => this.context = context;
+  void init() {}
 
   Future<void> postUserRequest() async {
     if (checkSignUpForm()) {
-      final response = await _service
-          .createUserRequest(SignUpModel(email: emailController.text, password: passwordController.text, name: userNameController.text));
+      final response = await _service.createUserRequest(
+          SignUpModel(email: emailController.text, password: passwordController.text, name: userNameController.text));
 
       print(response);
     }

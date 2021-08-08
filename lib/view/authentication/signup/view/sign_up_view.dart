@@ -21,7 +21,7 @@ class SignUpView extends StatelessWidget {
       model: SignUpViewModel(),
       onModelReady: (model) {
         model.setContext(context);
-        // model.init();
+        model.init();
       },
       builder: (BuildContext context, SignUpViewModel value) => buildScaffoldSignUp(value),
     );

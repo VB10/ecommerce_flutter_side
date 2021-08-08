@@ -24,8 +24,8 @@ class ApplicationTheme {
         ),
       ),
       textTheme: TextTheme(
-        headline2: textTheme.headline2!.copyWith(color: ColorTheme.BACKGROUND_COLOR),
-        headline4: textTheme.headline4!.copyWith(color: ColorTheme.BACKGROUND_COLOR),
+        headline2: textTheme.headline2?.copyWith(color: ColorTheme.BACKGROUND_COLOR),
+        headline4: textTheme.headline4?.copyWith(color: ColorTheme.BACKGROUND_COLOR),
       ),
       buttonTheme: ButtonThemeData(
         colorScheme: ColorScheme.light(

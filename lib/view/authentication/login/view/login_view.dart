@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:gow_mobile/product/init/lang/locale_keys.g.dart';
 
 import '../../../../core/components/container/space_height_container.dart';
 import '../../../../core/components/row/login_form_row.dart';
@@ -42,9 +44,7 @@ class _LoginViewState extends State<LoginView> {
         direction: Axis.horizontal,
         children: [
           SpaceHeightBox(height: 0.01),
-          LoginFormWidget(
-            onComplete: (model) {},
-          ),
+          LoginFormWidget(onComplete: (model) {}),
           buildHaveAccount,
         ],
       ),
@@ -62,9 +62,10 @@ class _LoginViewState extends State<LoginView> {
           style: policyTextStyle,
           children: [
             TextSpan(
-              text: "Don't have an account? Swipe right to \n ",
+              text: LocaleKeys.login_dontHaveAccount.tr(),
               children: [
-                TextSpan(text: "craete a new account").red(_loginViewModel.context),
+                TextSpan(text: '/n'),
+                TextSpan(text: LocaleKeys.login_createAccount.tr()).red(_loginViewModel.context),
               ],
             )
           ],

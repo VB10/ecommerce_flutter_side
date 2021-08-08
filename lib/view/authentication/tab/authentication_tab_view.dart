@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:gow_mobile/product/init/lang/locale_keys.g.dart';
 
 import '../../../core/extensions/context_extension.dart';
 import '../../../core/init/theme/color_theme.dart';
@@ -33,6 +35,10 @@ class AuthenticationTabView extends StatelessWidget {
           fontWeight: FontWeight.w700,
         ),
         labelStyle: context.theme.headline4!.copyWith(fontWeight: FontWeight.w700),
-        tabs: [Tab(text: "Sign Up"), Tab(text: "Login In"), Tab(text: "Forgot Password")]);
+        tabs: [
+          Tab(text: LocaleKeys.tab_signUp.tr()),
+          Tab(text: LocaleKeys.tab_login.tr()),
+          Tab(text: LocaleKeys.tab_forgot.tr())
+        ]);
   }
 }

@@ -17,15 +17,18 @@ class BaseView<T extends Store> extends StatefulWidget {
 }
 
 class _BaseViewState<T extends Store> extends State<BaseView<T>> {
+  late T model;
   @override
   void initState() {
-    widget.onModelReady(widget.model);
+    model = widget.model;
+
+    widget.onModelReady(model);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return widget.builder(context, widget.model);
+    return widget.builder(context, model);
   }
 
   @override
