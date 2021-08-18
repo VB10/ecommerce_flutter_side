@@ -1,5 +1,3 @@
-import '../../extensions/string_extension.dart';
-
 class ImageConstatns {
   static ImageConstatns? _instance;
   static ImageConstatns get instance {
@@ -12,10 +10,11 @@ class ImageConstatns {
 
   final String redArrow = 'back-1'.toPNG;
   final String mail = 'mail'.toPNG;
-  final String lock = 'lock'.toPNG;
-  final String user = 'user'.toPNG;
+  final String lock = 'password'.toPNG;
+  final String user = 'profile'.toPNG;
+}
 
-  String get mailSVG => '001-mail'.toSVG;
-  String get passwordSVG => 'password'.toSVG;
-  String get profileSVG => 'profile'.toSVG;
+extension _ImagePathPrefix on String {
+  String get toPNG => 'assets/image/$this.png';
+  String get toSVG => 'assets/svg/$this.svg';
 }

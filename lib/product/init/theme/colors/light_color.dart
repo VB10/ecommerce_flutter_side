@@ -1,38 +1,56 @@
-part of './IColorTheme.dart';
+part of 'color_themes.dart';
 
 class LightColors implements IColors {
   @override
   final _AppColors colors = _AppColors();
 
   @override
-  ColorScheme? colorScheme;
+  late final ColorScheme? colorScheme;
 
   @override
-  Color? appBarColor;
+  late final Color? appBarColor;
 
   @override
-  Color? scaffoldBackgroundColor;
+  late final Color? scaffoldBackgroundColor;
 
   @override
-  Color? tabBarColor;
+  late final Color? tabBarColor;
 
   @override
-  Color? tabbarNormalColor;
+  late final Color? tabbarNormalColor;
 
   @override
-  Color? tabbarSelectedColor;
+  late final Color? tabbarSelectedColor;
+
+  @override
+  late final Brightness? brightness;
+
+  @override
+  late final Color? cursorColor;
 
   LightColors() {
     appBarColor = colors.white;
     scaffoldBackgroundColor = colors.white;
+    brightness = Brightness.light;
     tabBarColor = colors.green;
     tabbarNormalColor = colors.darkerGrey;
     tabbarSelectedColor = colors.green;
-    colorScheme = ColorScheme.light()
-        .copyWith(onPrimary: colors.green, onSecondary: colors.white, onSurface: colors.mediumGreyBold);
-    brightness = Brightness.light;
+    cursorColor = colors.darkGrey;
+    colorScheme = ColorScheme(
+      onPrimary: colors.darkGrey,
+      onSecondary: colors.white,
+      onError: Colors.red,
+      onSurface: colors.mediumGreyBold,
+      primary: colors.darkGrey,
+      //
+      background: colors.lightGrey,
+      brightness: Brightness.light,
+      error: colors.bitterSweet,
+      onBackground: colors.darkGrey,
+      primaryVariant: colors.green,
+      secondary: colors.mediumGrey,
+      secondaryVariant: colors.mediumGreyBold,
+      surface: colors.white,
+    );
   }
-
-  @override
-  Brightness? brightness;
 }

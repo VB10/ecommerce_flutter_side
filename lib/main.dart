@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'core/init/constants/app_constants.dart';
 import 'core/init/constants/language_constants.dart';
-import 'core/init/theme/app_theme.dart';
 import 'product/init/app/app_init.dart';
+import 'product/init/theme/app_theme.dart';
 import 'view/authentication/tab/authentication_tab_view.dart';
 
 Future<void> main() async {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       home: AuthenticationTabView(),
-      theme: ApplicationTheme.instance.lightTheme,
+      theme: ThemeManager.craeteTheme(AppThemeLight()),
     );
   }
 }

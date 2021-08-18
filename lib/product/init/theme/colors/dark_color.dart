@@ -1,29 +1,32 @@
-part of './IColorTheme.dart';
+part of 'color_themes.dart';
 
 class DarkColors implements IColors {
   @override
   final _AppColors colors = _AppColors();
 
   @override
-  ColorScheme? colorScheme;
+  late final ColorScheme? colorScheme;
 
   @override
-  Brightness? brightness;
+  late final Brightness? brightness;
 
   @override
-  Color? appBarColor;
+  late final Color? appBarColor;
 
   @override
-  Color? scaffoldBackgroundColor;
+  late final Color? scaffoldBackgroundColor;
 
   @override
-  Color? tabBarColor;
+  late final Color? tabBarColor;
 
   @override
-  Color? tabbarNormalColor;
+  late final Color? tabbarNormalColor;
 
   @override
-  Color? tabbarSelectedColor;
+  late final Color? tabbarSelectedColor;
+
+  @override
+  Color? cursorColor;
 
   DarkColors() {
     appBarColor = colors.darkGrey;
@@ -31,7 +34,8 @@ class DarkColors implements IColors {
     tabBarColor = colors.green;
     tabbarNormalColor = colors.lighterGrey;
     tabbarSelectedColor = colors.green;
-    colorScheme = ColorScheme.dark().copyWith(onPrimary: colors.green, onSecondary: colors.darkGrey);
+    colorScheme = const ColorScheme.dark().copyWith(onPrimary: colors.green, onSecondary: colors.darkGrey);
     brightness = Brightness.dark;
+    cursorColor = colors.white;
   }
 }

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../core/components/button/fill_button_widget.dart';
-import '../core/components/image/circle_image.dart';
-
 class TestView extends StatefulWidget {
   @override
   _TestViewState createState() => _TestViewState();
@@ -35,7 +32,6 @@ class _TestViewState extends State<TestView> {
               controller: scrollController,
               itemCount: 30,
               itemBuilder: (context, index) {
-                print("$index - ${scrollController.offset}");
                 return Card(
                   child: ListTile(
                     leading: CircleAvatar(child: Text(index.toString())),
@@ -47,19 +43,6 @@ class _TestViewState extends State<TestView> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  FullWidthButton buildSignUpButton(BuildContext context) {
-    return FullWidthButton(
-      title: "SIGN UP",
-      onPressed: () {},
-      icon: CircleImage(
-        path: "assets/icon/back-1.png",
-        radius: 15,
-        turns: 0.5,
-        scale: 1.5,
       ),
     );
   }

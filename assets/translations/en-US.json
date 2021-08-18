@@ -5,7 +5,26 @@
         "forgot":"Forgot Password"
     },
     "login":{
-        "dontHaveAccount":"Don't have an account? Swipe right to",
-        "createAccount":"Create a new account"
+        "dontHaveAccount":"Don't have an account? Swipe left to",
+        "createAccount":"Create a new account",
+        "forgot":"Enter the email address you used to create your account and we will email you a link to reset your password"
+    },
+    "register":{
+        "createAccountLabel":"By creating an account, you agree to our",
+        "termsAndPrivaciy": "Terms of Service, Privacy Policy"
+    },
+    "label":{
+        "mail":"EMAIL",
+        "userName":"USERNAME",
+        "password":"PASSWORD"
+    },
+    "validator":{
+        "errorPassword":"Password field minumum needs 6 character",
+        "errorEmpty":"This field doesn't be empty",
+        "errorEmail":"Feild doesn't like email"
+    },
+    "button":{
+        "signup":"SignUp",
+        "send":"Send"
     }
 }

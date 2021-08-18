@@ -28,13 +28,15 @@ class TextThemeLight implements ITextTheme {
   TextStyle? headline5;
 
   @override
-  TextStyle? headline6 = TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
+  TextStyle? headline6 = const TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
 
   @override
-  TextStyle? subtitle1 = TextStyle(fontSize: 16.0);
+  // BURADA
+  TextStyle? subtitle1 = const TextStyle(fontSize: 16.0);
 
   @override
   TextStyle? subtitle2;
+
   @override
   final Color? primaryColor;
 

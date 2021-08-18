@@ -36,11 +36,12 @@ dependencies:
   kartal: ^2.0.0
   mobx: ^2.0.0
   mobx_codegen: ^2.0.2
-  pedantic: ^1.11.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  flutter_lints: ^1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -53,3 +54,4 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/translations/
+    - assets/image/
