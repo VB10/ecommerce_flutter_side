@@ -7,9 +7,10 @@ import '../forgot/view/forgot_view.dart';
 import '../login/view/login_view.dart';
 import '../signup/view/sign_up_view.dart';
 
-// ignore: use_key_in_widget_constructors
 class AuthenticationTabView extends StatelessWidget {
-  final List<Widget> _tabbarView = [const SignUpView(), LoginView(), ForgotView()];
+  AuthenticationTabView({Key? key}) : super(key: key);
+
+  final List<Widget> _tabbarView = [const SignUpView(), const LoginView(), const ForgotView()];
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +21,17 @@ class AuthenticationTabView extends StatelessWidget {
         body: Column(
           children: [
             buildTabBar(context),
-            Expanded(flex: 8, child: _buildTabBody()),
+            Expanded(flex: 8, child: _buildTabBody(context)),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTabBody() => TabBarView(children: _tabbarView);
+  Widget _buildTabBody(BuildContext context) => Padding(
+        padding: context.paddingNormal,
+        child: TabBarView(children: _tabbarView),
+      );
 
   Widget buildTabBar(BuildContext context) {
     return TabBar(

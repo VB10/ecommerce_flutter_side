@@ -28,7 +28,7 @@ class _PasswordFieldState extends State<PasswordField> {
   Widget build(BuildContext context) {
     return IconFormTextField(
       controller: widget.controller,
-      label: LocaleKeys.label_password,
+      label: LocaleKeys.label_password.tr(),
       iconPath: ImageConstatns.instance.lock,
       secure: _isScure,
       suffixIcon: IconButton(

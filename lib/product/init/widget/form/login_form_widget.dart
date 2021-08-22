@@ -1,11 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/input/icon_form_field.dart';
-import '../../../../core/init/constants/image_constants.dart';
 import '../../../../view/authentication/login/model/login_model.dart';
 import '../../lang/locale_keys.g.dart';
 import '../button/login_button.dart';
+import '../field/email_field.dart';
 import '../field/password_field.dart';
 
 class LoginFormWidget extends StatefulWidget {
@@ -30,11 +29,8 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
         key: _loginFormKey,
         child: Column(
           children: [
-            IconFormTextField(
-              controller: _userNameController,
-              label: LocaleKeys.label_mail,
-              iconPath: ImageConstatns.instance.user,
-              validator: (value) => (value ?? '').isNotEmpty ? null : 'error',
+            EmailField(
+              textEditingController: _userNameController,
             ),
             PasswordField(controller: _passwordController),
             LoginButton(

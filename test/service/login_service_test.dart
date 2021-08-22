@@ -12,24 +12,24 @@ void main() {
   test('loginUserRequest method test with auth user.', () async {
     final checkUser = await loginService?.loginUserRequest(LoginModel(email: 'vb@test.com', password: '123456'));
 
-    expect(checkUser?.data, isNotNull);
+    expect(checkUser, isNotNull);
   });
 
   test('loginUserRequest method test with error secenario', () async {
     final checkUser = await loginService?.loginUserRequest(LoginModel(email: 'vb@test.com', password: '1223456'));
 
-    expect(checkUser?.error, isNotNull);
+    expect(checkUser, isNotNull);
   });
 
   test('createUser method test with sucess', () async {
     final checkUser = await loginService?.createUser(LoginModel(email: 'yarita4619@aline9.com', password: '123456'));
 
-    expect(checkUser?.data, isNotNull);
+    expect(checkUser, isNotNull);
   });
 
   test('forgotUser method test with sucess', () async {
     final checkUser = await loginService?.forgotPassword(EmailModel(email: 'yarita4619@aline9.com'));
 
-    expect(checkUser?.data, isNotNull);
+    expect(checkUser, isNotNull);
   });
 }

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kartal/kartal.dart';
-
-import '../../extensions/string_extension.dart';
 
 class IconFormTextField extends StatelessWidget {
   final String label;
@@ -29,7 +26,7 @@ class IconFormTextField extends StatelessWidget {
         obscureText: secure ?? false,
         validator: validator,
         decoration: InputDecoration(
-          labelText: label.locale,
+          labelText: label,
           border: InputBorder.none,
           contentPadding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.05),
           suffixIcon: suffixIcon,

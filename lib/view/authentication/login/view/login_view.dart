@@ -3,26 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../../../core/components/container/space_height_container.dart';
-import '../../../../core/components/row/login_form_row.dart';
 import '../../../../core/init/app/base/base_view.dart';
+import '../../../../product/base/base_state.dart';
 import '../../../../product/init/lang/locale_keys.g.dart';
 import '../../../../product/init/widget/form/login_form_widget.dart';
+import '../../../../product/service/auth/authentication_service.dart';
 import '../view-model/login_view_model.dart';
 
-// ignore: use_key_in_widget_constructors
-class LoginView extends StatefulWidget {
-  @override
-  _LoginViewState createState() => _LoginViewState();
-}
+class LoginView extends StatelessWidget with BaseState {
+  const LoginView({Key? key}) : super(key: key);
 
-class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return BaseView<LoginViewModel>(
       builder: (context, value) {
         return buildScaffold(value);
       },
-      model: LoginViewModel(),
+      model: LoginViewModel(AuthenticationService(networkManager)),
       onModelReady: (model) {
         model.setContext(context);
         model.init();
@@ -31,26 +28,23 @@ class _LoginViewState extends State<LoginView> {
   }
 
   Scaffold buildScaffold(LoginViewModel viewModel) => Scaffold(
-        key: viewModel.loginScaffoldKey,
-        body: buildSingleChildScrollView(viewModel.context),
+        body: SingleChildScrollView(
+          child: buildLoginFormRow(viewModel),
+        ),
       );
 
-  SingleChildScrollView buildSingleChildScrollView(BuildContext context) => SingleChildScrollView(
-        child: buildLoginFormRow(context),
-      );
-
-  LoginFormRow buildLoginFormRow(BuildContext context) {
-    return LoginFormRow(
-      child: Wrap(
-        runSpacing: context.height * 0.05,
-        spacing: context.height * 0.1,
-        direction: Axis.horizontal,
-        children: [
-          const SpaceHeightBox(height: 0.01),
-          Card(child: LoginFormWidget(onComplete: (model) async {})),
-          buildHaveAccount(context),
-        ],
-      ),
+  Widget buildLoginFormRow(LoginViewModel viewModel) {
+    return Wrap(
+      runSpacing: viewModel.context.dynamicHeight(0.05),
+      spacing: viewModel.context.dynamicHeight(0.01),
+      direction: Axis.horizontal,
+      children: [
+        const SpaceHeightBox(height: 0.01),
+        Card(child: LoginFormWidget(onComplete: (model) async {
+          await viewModel.checkUserLoginRequest(model);
+        })),
+        buildHaveAccount(viewModel.context),
+      ],
     );
   }
 
