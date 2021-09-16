@@ -26,6 +26,7 @@ abstract class IColors {
   Color? tabbarNormalColor;
   Brightness? brightness;
   ColorScheme? colorScheme;
+  Color? textColor;
 
   Color? cursorColor;
 }

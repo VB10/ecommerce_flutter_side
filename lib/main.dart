@@ -5,8 +5,7 @@ import 'core/init/constants/app_constants.dart';
 import 'core/init/constants/language_constants.dart';
 import 'product/init/app/app_init.dart';
 import 'product/init/theme/app_theme.dart';
-import 'view/authentication/tab/authentication_tab_view.dart';
-import 'view/common/splash/view/splash_view.dart';
+import 'view/shop/home/shop_home_view.dart';
 
 Future<void> main() async {
   await AppInitiliaze().initBeforeAppStart();
@@ -26,10 +25,15 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      routes: {
-        '/': (_) => const SplashView(),
-        '/auth': (_) => AuthenticationTabView(),
-      },
+      home: ShopHomeView(),
+      // builder: (context, child) {
+      //   return MediaQuery(
+      //       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0), child: child ?? const SizedBox());
+      // },
+      // routes: {
+      //   '/': (_) => const SplashView(),
+      //   '/auth': (_) => AuthenticationTabView(),
+      // },
       theme: ThemeManager.craeteTheme(AppThemeLight()),
     );
   }

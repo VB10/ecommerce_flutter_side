@@ -28,8 +28,12 @@ class LightColors implements IColors {
   @override
   late final Color? cursorColor;
 
+  @override
+  Color? textColor;
+
   LightColors() {
     appBarColor = colors.white;
+    textColor = Colors.black;
     scaffoldBackgroundColor = colors.white;
     brightness = Brightness.light;
     tabBarColor = colors.green;

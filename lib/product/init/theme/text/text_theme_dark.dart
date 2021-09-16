@@ -17,7 +17,7 @@ class TextThemeDark implements ITextTheme {
   TextStyle? headline1;
 
   @override
-  TextStyle? headline3;
+  TextStyle? headline3 = const TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   @override
   TextStyle? headline4;
@@ -26,10 +26,10 @@ class TextThemeDark implements ITextTheme {
   TextStyle? headline5;
 
   @override
-  TextStyle? headline6 = TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
+  TextStyle? headline6 = const TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
 
   @override
-  TextStyle? subtitle1 = TextStyle(fontSize: 16.0);
+  TextStyle? subtitle1 = const TextStyle(fontSize: 16.0);
 
   @override
   TextStyle? subtitle2;

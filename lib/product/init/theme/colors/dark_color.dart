@@ -38,4 +38,7 @@ class DarkColors implements IColors {
     brightness = Brightness.dark;
     cursorColor = colors.white;
   }
+
+  @override
+  Color? textColor;
 }

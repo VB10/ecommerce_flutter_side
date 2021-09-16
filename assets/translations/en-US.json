@@ -26,5 +26,8 @@
     "button":{
         "signup":"SignUp",
         "send":"Send"
+    },"home":{
+        "categories":"Categories",
+        "latest":"Latest"
     }
 }

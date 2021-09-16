@@ -52,7 +52,7 @@ class AppThemeLight extends ITheme {
   late final ITextTheme textTheme;
 
   AppThemeLight() {
-    textTheme = TextThemeLight(colors.colors.darkGrey);
+    textTheme = TextThemeLight(colors.textColor);
   }
 
   @override

@@ -23,5 +23,8 @@ abstract class  LocaleKeys {
   static const button_signup = 'button.signup';
   static const button_send = 'button.send';
   static const button = 'button';
+  static const home_categories = 'home.categories';
+  static const home_latest = 'home.latest';
+  static const home = 'home';
 
 }

@@ -19,7 +19,7 @@ class TextThemeLight implements ITextTheme {
   TextStyle? headline1;
 
   @override
-  TextStyle? headline3;
+  TextStyle? headline3 = const TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   @override
   TextStyle? headline4;
@@ -31,7 +31,6 @@ class TextThemeLight implements ITextTheme {
   TextStyle? headline6 = const TextStyle(fontSize: 20, fontWeight: FontWeight.normal);
 
   @override
-  // BURADA
   TextStyle? subtitle1 = const TextStyle(fontSize: 16.0);
 
   @override
@@ -44,6 +43,7 @@ class TextThemeLight implements ITextTheme {
     data = TextTheme(
       headline6: headline6,
       subtitle1: subtitle1,
-    ).apply(bodyColor: primaryColor);
+      headline3: headline3,
+    ).apply(displayColor: primaryColor);
   }
 }
