@@ -8,7 +8,7 @@ class BaseView<T extends Store> extends StatefulWidget {
   final VoidCallback? dispose;
   final VoidCallback? onRefresh;
 
-  BaseView(
+  const BaseView(
       {Key? key, required this.builder, required this.model, required this.onModelReady, this.dispose, this.onRefresh})
       : super(key: key);
 

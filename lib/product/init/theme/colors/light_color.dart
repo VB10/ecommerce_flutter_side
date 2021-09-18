@@ -45,8 +45,10 @@ class LightColors implements IColors {
       onSecondary: colors.white,
       onError: Colors.red,
       onSurface: colors.mediumGreyBold,
-      primary: colors.darkGrey,
+      primary: colors.lightGrey,
+
       //
+
       background: colors.lightGrey,
       brightness: Brightness.light,
       error: colors.bitterSweet,

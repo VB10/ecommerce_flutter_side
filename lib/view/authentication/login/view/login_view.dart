@@ -6,8 +6,8 @@ import '../../../../core/components/container/space_height_container.dart';
 import '../../../../core/init/app/base/base_view.dart';
 import '../../../../product/base/base_state.dart';
 import '../../../../product/init/lang/locale_keys.g.dart';
-import '../../../../product/init/widget/form/login_form_widget.dart';
 import '../../../../product/service/auth/authentication_service.dart';
+import '../../../../product/widget/form/login_form_widget.dart';
 import '../view-model/login_view_model.dart';
 
 class LoginView extends StatelessWidget with BaseState {

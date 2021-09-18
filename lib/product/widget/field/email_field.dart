@@ -4,7 +4,7 @@ import 'package:kartal/kartal.dart';
 
 import '../../../../core/components/input/icon_form_field.dart';
 import '../../../../core/init/constants/image_constants.dart';
-import '../../lang/locale_keys.g.dart';
+import '../../init/lang/locale_keys.g.dart';
 
 class EmailField extends StatelessWidget {
   final TextEditingController textEditingController;

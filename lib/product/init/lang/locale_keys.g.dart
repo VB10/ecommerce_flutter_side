@@ -25,6 +25,7 @@ abstract class  LocaleKeys {
   static const button = 'button';
   static const home_categories = 'home.categories';
   static const home_latest = 'home.latest';
+  static const home_seeAll = 'home.seeAll';
   static const home = 'home';
 
 }

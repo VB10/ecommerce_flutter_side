@@ -13,7 +13,12 @@ class ImageConstatns {
   final String lock = 'password'.toPNG;
   final String user = 'profile'.toPNG;
 
-  // Lottie
+  final _LottiePath lottiePath = _LottiePath();
+}
+
+class _LottiePath {
+  final String shopCar = 'lottie_shop_car'.toLottie;
+  final String shopBag = 'lottie_shop_bag'.toLottie;
   final String ecommerceSplash = 'ecommerce_splash'.toLottie;
   final String ecommerce = 'e_commerce'.toLottie;
 }

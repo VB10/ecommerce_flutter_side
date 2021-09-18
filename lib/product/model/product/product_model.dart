@@ -7,9 +7,16 @@ part 'product_model.g.dart';
 class ProductModel extends INetworkModel<ProductModel> {
   String? id;
   String? categoiryId;
-  int? money;
+  double? money;
   String? image;
   String? title;
+  ProductModel({
+    this.id,
+    this.categoiryId,
+    this.money,
+    this.image,
+    this.title,
+  });
 
   @override
   ProductModel fromJson(Map<String, dynamic> json) {

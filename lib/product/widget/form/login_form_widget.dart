@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../view/authentication/login/model/login_model.dart';
-import '../../lang/locale_keys.g.dart';
+import '../../init/lang/locale_keys.g.dart';
 import '../button/login_button.dart';
 import '../field/email_field.dart';
 import '../field/password_field.dart';

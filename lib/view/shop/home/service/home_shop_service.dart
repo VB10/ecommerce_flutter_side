@@ -1,5 +1,6 @@
 import 'package:vexana/vexana.dart';
 
+import '../../../../product/model/product/product_model.dart';
 import '../model/category_model.dart';
 
 part './shop_home_path.dart';
@@ -13,7 +14,7 @@ abstract class IHomeShopService {
 
   Future<List<CategoryModel>> fetchCategores();
   Future<List<LatestModel>> fetchLatest();
-  void fetchProducts();
+  Future<List<ProductModel>> fetchProducts();
 }
 
 class HomeShopService extends IHomeShopService {
@@ -36,7 +37,10 @@ class HomeShopService extends IHomeShopService {
   }
 
   @override
-  void fetchProducts() {
-    // TODO: implement fetchProducts
+  Future<List<ProductModel>> fetchProducts() async {
+    final response = await _manager.send<ProductModel, List<ProductModel>>(_ShopHomePath.product.rawValue(),
+        parseModel: ProductModel(), method: RequestType.GET);
+    print(response.data);
+    return response.data ?? [];
   }
 }

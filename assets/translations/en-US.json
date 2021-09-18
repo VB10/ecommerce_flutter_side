@@ -28,6 +28,7 @@
         "send":"Send"
     },"home":{
         "categories":"Categories",
-        "latest":"Latest"
+        "latest":"Latest",
+        "seeAll":"See All"
     }
 }
