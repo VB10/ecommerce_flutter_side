@@ -17,9 +17,12 @@ abstract class ThemeManager {
         cardColor: theme.colors.colorScheme?.onSecondary,
         bottomAppBarColor: theme.colors.scaffoldBackgroundColor,
         brightness: theme.colors.colorScheme?.brightness,
+        canvasColor: Colors.red,
+        progressIndicatorTheme: ProgressIndicatorThemeData(color: theme.colors.colors.bitterSweet),
         elevatedButtonTheme:
             ElevatedButtonThemeData(style: ElevatedButton.styleFrom(onPrimary: theme.colors.colorScheme?.onSecondary)),
         tabBarTheme: TabBarTheme(
+          labelPadding: EdgeInsets.zero,
           indicator: const BoxDecoration(),
           labelColor: theme.colors.tabbarSelectedColor,
           unselectedLabelColor: theme.colors.tabbarNormalColor,

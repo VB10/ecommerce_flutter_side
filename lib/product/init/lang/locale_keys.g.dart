@@ -27,5 +27,13 @@ abstract class  LocaleKeys {
   static const home_latest = 'home.latest';
   static const home_seeAll = 'home.seeAll';
   static const home = 'home';
+  static const homeTab_home = 'homeTab.home';
+  static const homeTab_search = 'homeTab.search';
+  static const homeTab_cart = 'homeTab.cart';
+  static const homeTab_profile = 'homeTab.profile';
+  static const homeTab_more = 'homeTab.more';
+  static const homeTab = 'homeTab';
+  static const splash_loading = 'splash.loading';
+  static const splash = 'splash';
 
 }

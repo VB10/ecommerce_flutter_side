@@ -55,7 +55,6 @@ abstract class _ShopHomeViewModelBase with Store, BaseViewModel {
   @action
   Future<void> _fetchProducts() async {
     products = await _homeShopService.fetchProducts();
-    print(products);
   }
 
   @action

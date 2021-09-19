@@ -37,8 +37,8 @@ class LightColors implements IColors {
     scaffoldBackgroundColor = colors.white;
     brightness = Brightness.light;
     tabBarColor = colors.green;
-    tabbarNormalColor = colors.darkerGrey;
-    tabbarSelectedColor = colors.green;
+    tabbarNormalColor = colors.mediumGreyBold;
+    tabbarSelectedColor = colors.bitterSweet;
     cursorColor = colors.darkGrey;
     colorScheme = ColorScheme(
       onPrimary: colors.darkGrey,
@@ -55,7 +55,7 @@ class LightColors implements IColors {
       onBackground: colors.darkGrey,
       primaryVariant: colors.green,
       secondary: colors.mediumGrey,
-      secondaryVariant: colors.mediumGreyBold,
+      secondaryVariant: colors.mediumGrey,
       surface: colors.white,
     );
   }

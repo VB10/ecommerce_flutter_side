@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:gow_mobile/view/common/splash/view/splash_view.dart';
+import 'package:gow_mobile/view/shop/tab/shop_tab_view.dart';
 
 import 'core/init/constants/app_constants.dart';
 import 'core/init/constants/language_constants.dart';
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: ShopHomeView(),
+      home: const SplashView(),
       // builder: (context, child) {
       //   return MediaQuery(
       //       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0), child: child ?? const SizedBox());
