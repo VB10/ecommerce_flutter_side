@@ -46,6 +46,7 @@ class LightColors implements IColors {
       onError: Colors.red,
       onSurface: colors.mediumGreyBold,
       primary: colors.lightGrey,
+      secondary: colors.mediumGrey,
 
       //
 
@@ -54,7 +55,6 @@ class LightColors implements IColors {
       error: colors.bitterSweet,
       onBackground: colors.darkGrey,
       primaryVariant: colors.green,
-      secondary: colors.mediumGrey,
       secondaryVariant: colors.mediumGrey,
       surface: colors.white,
     );

@@ -5,7 +5,7 @@ class BaseView<T extends Store> extends StatefulWidget {
   final Widget Function(BuildContext context, T value) builder;
   final T model;
   final void Function(T model) onModelReady;
-  final VoidCallback? dispose;
+  final void Function(T model)? dispose;
   final VoidCallback? onRefresh;
 
   const BaseView(
@@ -35,7 +35,7 @@ class _BaseViewState<T extends Store> extends State<BaseView<T>> {
   void dispose() {
     super.dispose();
     if (widget.dispose != null) {
-      widget.dispose!();
+      widget.dispose!(model);
     }
   }
 }

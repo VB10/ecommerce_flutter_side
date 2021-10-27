@@ -40,7 +40,7 @@ class AuthenticationTabView extends StatelessWidget {
         labelColor: context.colorScheme.onPrimary,
         unselectedLabelColor: context.colorScheme.onPrimary.withOpacity(0.1),
         unselectedLabelStyle: context.textTheme.headline4?.copyWith(fontWeight: FontWeight.w700),
-        labelStyle: context.textTheme.headline4!.copyWith(fontWeight: FontWeight.w700),
+        labelStyle: context.textTheme.headline4?.copyWith(fontWeight: FontWeight.w700),
         tabs: [
           Tab(text: LocaleKeys.tab_signUp.tr()),
           Tab(text: LocaleKeys.tab_login.tr()),

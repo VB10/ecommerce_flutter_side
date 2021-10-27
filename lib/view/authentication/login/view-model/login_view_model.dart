@@ -27,4 +27,6 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   Future<void> checkUserLoginRequest(LoginModel model) async {
     final response = await _authenticationService.loginUserRequest(model);
   }
+
+  void customDispose() {}
 }

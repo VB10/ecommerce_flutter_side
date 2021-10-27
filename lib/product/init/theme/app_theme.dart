@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'colors/color_themes.dart';
-import 'text/ITextTheme.dart';
+import 'text/text_theme.dart';
 import 'text/text_theme_dark.dart';
 import 'text/text_theme_light.dart';
 

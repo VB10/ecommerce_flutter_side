@@ -20,6 +20,9 @@ class LoginView extends StatelessWidget with BaseState {
         return buildScaffold(value);
       },
       model: LoginViewModel(AuthenticationService(networkManager)),
+      dispose: (model) {
+        model.customDispose();
+      },
       onModelReady: (model) {
         model.setContext(context);
         model.init();

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:mobx/mobx.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/init/app/base/base_view_model.dart';
+import '../../../../product/init/navigation/navigation_enums.dart';
+import '../../../../product/init/navigation/navigation_manager.dart';
 
 part 'splash_view_model.g.dart';
 
@@ -19,6 +22,6 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
 
   Future<void> navigateToHome() async {
     await Future.delayed(context.durationSlow);
-    context.navigateToReset('/auth');
+    context.read<NavigationService>().navigateToPageClear(path: NavigationEnums.login.rawValue);
   }
 }

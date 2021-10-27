@@ -10,7 +10,9 @@ import '../../../core/init/app/base/base_view.dart';
 import '../../../product/base/base_state.dart';
 import '../../../product/init/lang/locale_keys.g.dart';
 import '../../../product/model/product/product_model.dart';
+import '../../../product/widget/card/product_normal_card.dart';
 import '../../../product/widget/padding/paddig_widgets.dart';
+import '../../../product/widget/row/categories_row.dart';
 import 'model/category_model.dart';
 import 'service/home_shop_service.dart';
 import 'view_model/shop_home_view_model.dart';
@@ -41,24 +43,7 @@ class ShopHomeView extends StatelessWidget with BaseState {
         body: ListView(
           shrinkWrap: true,
           children: [
-            PaddingNormal(
-                child: Row(
-              children: [
-                Text(LocaleKeys.home_categories.tr(), style: context.textTheme.headline3),
-                const Spacer(),
-                TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.badge,
-                      color: context.colorScheme.onPrimary,
-                    ),
-                    style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                    label: Text(
-                      LocaleKeys.home_seeAll.tr(),
-                      style: context.textTheme.subtitle2,
-                    )),
-              ],
-            )),
+            _titleHeaderText(context),
             context.emptySizedHeightBoxLow,
             Observer(builder: (_) => _categoriesProducts(context, viewModel.categories)),
             context.emptySizedHeightBoxLow,
@@ -71,6 +56,21 @@ class ShopHomeView extends StatelessWidget with BaseState {
         ),
       ),
     );
+  }
+
+  PaddingNormal _titleHeaderText(BuildContext context) {
+    return PaddingNormal(
+        child: Row(
+      children: [
+        Text(LocaleKeys.home_categories.tr(), style: context.textTheme.headline3),
+        const Spacer(),
+        TextButton.icon(
+            onPressed: () {},
+            icon: Icon(Icons.badge, color: context.colorScheme.onPrimary),
+            style: TextButton.styleFrom(padding: EdgeInsets.zero),
+            label: Text(LocaleKeys.home_seeAll.tr(), style: context.textTheme.subtitle2)),
+      ],
+    ));
   }
 
   IconButton _messageButton(BuildContext context) {
@@ -100,28 +100,7 @@ class ShopHomeView extends StatelessWidget with BaseState {
     return items.isEmpty
         ? SizedBox(height: context.dynamicHeight(0.3), child: LottieBuilder.asset(imageConstants.lottiePath.shopBag))
         : PaddingNormal(
-            child: SizedBox(
-                height: context.dynamicHeight(0.15),
-                child: Row(
-                  children: List.generate(4, (index) {
-                    return Expanded(
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: CachedNetworkImage(
-                              imageUrl: items[index].image ?? '',
-                            ),
-                          ),
-                          FittedBox(
-                            child: Text(items[index].name ?? '',
-                                style: context.textTheme.subtitle1
-                                    ?.copyWith(color: context.colorScheme.onPrimary, fontWeight: FontWeight.w500)),
-                          )
-                        ],
-                      ),
-                    );
-                  }),
-                )),
+            child: SizedBox(height: context.dynamicHeight(0.15), child: CategoriesRow(items: items.take(4).toList())),
           );
   }
 
@@ -150,25 +129,7 @@ class ShopHomeView extends StatelessWidget with BaseState {
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, mainAxisExtent: context.dynamicHeight(0.2)),
         itemCount: products.length,
         itemBuilder: (context, index) {
-          return Card(
-            child: Padding(
-              padding: context.paddingLow,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(child: CachedNetworkImage(imageUrl: products[index].image ?? '')),
-                  Text(
-                    '${products[index].title}',
-                    style: context.textTheme.bodyText1,
-                  ),
-                  Text(
-                    '${products[index].money}',
-                    style: context.textTheme.bodyText2,
-                  ),
-                ],
-              ),
-            ),
-          );
+          return ProductNormalCard(model: products[index]);
         },
       ),
     );

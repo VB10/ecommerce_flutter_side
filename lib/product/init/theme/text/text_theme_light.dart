@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ITextTheme.dart';
+import 'text_theme.dart';
 
 class TextThemeLight implements ITextTheme {
   @override
@@ -40,6 +40,7 @@ class TextThemeLight implements ITextTheme {
   final Color? primaryColor;
 
   TextThemeLight(this.primaryColor) {
+    fontFamily = 'NeusaNext';
     data = TextTheme(
             headline6: headline6,
             bodyText1: bodyText1,

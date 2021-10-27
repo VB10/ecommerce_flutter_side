@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ITextTheme.dart';
+import 'text_theme.dart';
 
 class TextThemeDark implements ITextTheme {
   @override

@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:gow_mobile/product/init/lang/locale_keys.g.dart';
-import 'package:gow_mobile/view/shop/home/shop_home_view.dart';
-import 'package:gow_mobile/view/shop/tab/model/tab_model.dart';
-import 'package:kartal/kartal.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+
+import 'model/tab_model.dart';
 
 class ShopTabView extends StatelessWidget {
   ShopTabView({Key? key}) : super(key: key);
@@ -16,7 +14,9 @@ class ShopTabView extends StatelessWidget {
       length: 5,
       child: Scaffold(
         body: TabBarView(children: _items.map((e) => e.page).toList()),
-        bottomNavigationBar: TabBar(tabs: _items.map((e) => Tab(text: e.title.tr(), icon: Icon(e.icon))).toList()),
+        bottomNavigationBar: BottomAppBar(
+          child: TabBar(tabs: _items.map((e) => Tab(text: e.title.tr(), icon: Icon(e.icon))).toList()),
+        ),
       ),
     );
   }
