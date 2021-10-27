@@ -59,13 +59,14 @@ class ProfileView extends StatelessWidget {
                     ],
                   ),
                 ),
-
+                context.emptySizedHeightBoxLow3x,
                 //
                 Card(
                   child: Column(
                     children: [
                       ListTile(
                         leading: Icon(Icons.menu),
+                        subtitle: Divider(),
                         title: Row(
                           children: [
                             Text('All My Orders'),

@@ -27,6 +27,7 @@ abstract class IColors {
   Brightness? brightness;
   ColorScheme? colorScheme;
   Color? textColor;
+  Color? bottomAppBarColor;
 
   Color? cursorColor;
 }

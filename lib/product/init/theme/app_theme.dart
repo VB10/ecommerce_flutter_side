@@ -35,6 +35,7 @@ abstract class ThemeManager {
         floatingActionButtonTheme: FloatingActionButtonThemeData(
             foregroundColor: theme.colors.colors.white, backgroundColor: theme.colors.colors.mediumGreyBold),
         appBarTheme: AppBarTheme(color: theme.colors.appBarColor, elevation: 0, brightness: theme.colors.brightness),
+        bottomAppBarTheme: BottomAppBarTheme(color: theme.colors.bottomAppBarColor),
         scaffoldBackgroundColor: theme.colors.scaffoldBackgroundColor,
         colorScheme: theme.colors.colorScheme,
       );
