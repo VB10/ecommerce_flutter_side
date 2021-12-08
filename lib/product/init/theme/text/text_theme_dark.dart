@@ -43,4 +43,7 @@ class TextThemeDark implements ITextTheme {
       subtitle1: subtitle1,
     ).apply(bodyColor: primaryColor);
   }
+
+  @override
+  TextStyle? headline2;
 }

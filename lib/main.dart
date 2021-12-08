@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 import 'core/init/constants/app_constants.dart';
 import 'core/init/constants/language_constants.dart';
@@ -27,14 +28,19 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      home: ShopTabView(),
-      onGenerateRoute: NavigationRoute().generateRoute,
-      navigatorKey: context.read<NavigationService>().navigatorKey,
-      theme: ThemeManager.craeteTheme(AppThemeLight()),
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation, DeviceType deviceType) {
+        return MaterialApp(
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          home: ShopTabView(),
+          onGenerateRoute: NavigationRoute().generateRoute,
+          navigatorKey: context.read<NavigationService>().navigatorKey,
+          theme: ThemeManager.craeteTheme(AppThemeLight()),
+        );
+      },
+      // child:,
     );
   }
 }

@@ -51,14 +51,14 @@ class LightColors implements IColors {
       onSurface: colors.mediumGreyBold,
       primary: colors.lightGrey,
       secondary: colors.mediumGrey,
+      error: colors.bitterSweet,
+      onBackground: colors.darkGrey,
+      primaryVariant: colors.lighterGrey,
 
       //
 
       background: colors.lightGrey,
       brightness: Brightness.light,
-      error: colors.bitterSweet,
-      onBackground: colors.darkGrey,
-      primaryVariant: colors.green,
       secondaryVariant: colors.mediumGrey,
       surface: colors.white,
     );

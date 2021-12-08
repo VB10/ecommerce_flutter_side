@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 
 class ImageConstatns {
@@ -18,6 +17,7 @@ class ImageConstatns {
   final String user = 'profile'.toPNG;
 
   final _LottiePath lottiePath = _LottiePath();
+  final _IconPath iconPath = _IconPath();
 }
 
 class _LottiePath {
@@ -28,8 +28,28 @@ class _LottiePath {
   final String shopSplash = 'lottie_shop_splash'.toLottie;
 }
 
+class _IconPath {
+  final String allOrder = 'ic_all_order'.toIcon;
+  final String currency = 'ic_currency'.toIcon;
+  final String faq = 'ic_faq'.toIcon;
+  final String finished = 'ic_finished'.toIcon;
+  final String invite = 'ic_invite'.toIcon;
+  final String language = 'ic_language'.toIcon;
+  final String legal = 'ic_legal'.toIcon;
+  final String notification = 'ic_notification'.toIcon;
+  final String payment = 'ic_payment'.toIcon;
+  final String padingPayment = 'ic_pending_payment'.toIcon;
+  final String padingShipment = 'ic_pending_shipment'.toIcon;
+  final String privacy = 'ic_privacy'.toIcon;
+  final String rate = 'ic_rate'.toIcon;
+  final String shipping = 'ic_shipping'.toIcon;
+  final String suggest = 'ic_suggest'.toIcon;
+  final String support = 'ic_support'.toIcon;
+}
+
 extension _ImagePathPrefix on String {
   String get toPNG => 'assets/image/$this.png';
+  String get toIcon => 'assets/png/$this.png';
   String get toSVG => 'assets/svg/$this.svg';
   String get toLottie => 'assets/lottie/$this.json';
 }

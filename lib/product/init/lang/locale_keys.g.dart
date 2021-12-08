@@ -22,11 +22,15 @@ abstract class  LocaleKeys {
   static const validator = 'validator';
   static const button_signup = 'button.signup';
   static const button_send = 'button.send';
+  static const button_clear = 'button.clear';
   static const button = 'button';
   static const home_categories = 'home.categories';
   static const home_latest = 'home.latest';
   static const home_seeAll = 'home.seeAll';
   static const home = 'home';
+  static const serach_searchSomething = 'serach.searchSomething';
+  static const serach_recentlyView = 'serach.recentlyView';
+  static const serach = 'serach';
   static const homeTab_home = 'homeTab.home';
   static const homeTab_search = 'homeTab.search';
   static const homeTab_cart = 'homeTab.cart';
@@ -35,5 +39,7 @@ abstract class  LocaleKeys {
   static const homeTab = 'homeTab';
   static const splash_loading = 'splash.loading';
   static const splash = 'splash';
+  static const profile_editProfile = 'profile.editProfile';
+  static const profile = 'profile';
 
 }

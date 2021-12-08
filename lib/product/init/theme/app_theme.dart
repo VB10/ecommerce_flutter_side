@@ -27,7 +27,7 @@ abstract class ThemeManager {
           labelColor: theme.colors.tabbarSelectedColor,
           unselectedLabelColor: theme.colors.tabbarNormalColor,
         ),
-        iconTheme: IconThemeData(color: theme.colors.colors.darkGrey),
+        iconTheme: IconThemeData(color: theme.colors.colors.darkGrey, size: 24),
         inputDecorationTheme: InputDecorationTheme(
           labelStyle: theme.textTheme.subtitle2,
         ),

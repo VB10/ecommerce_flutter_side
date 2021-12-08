@@ -4,6 +4,7 @@ abstract class ITextTheme {
   final Color? primaryColor;
   late final TextTheme data;
   TextStyle? headline1;
+  TextStyle? headline2;
   TextStyle? headline3;
   TextStyle? headline4;
   TextStyle? headline5;

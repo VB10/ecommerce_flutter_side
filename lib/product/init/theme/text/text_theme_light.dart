@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'text_theme.dart';
 
@@ -19,7 +20,10 @@ class TextThemeLight implements ITextTheme {
   TextStyle? headline1;
 
   @override
-  TextStyle? headline3 = const TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  TextStyle? headline2 = const TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  @override
+  TextStyle? headline3;
 
   @override
   TextStyle? headline4;
@@ -40,10 +44,11 @@ class TextThemeLight implements ITextTheme {
   final Color? primaryColor;
 
   TextThemeLight(this.primaryColor) {
-    fontFamily = 'NeusaNext';
+    fontFamily = GoogleFonts.arimo().fontFamily;
     data = TextTheme(
             headline6: headline6,
             bodyText1: bodyText1,
+            headline2: headline2,
             bodyText2: bodyText2,
             subtitle1: subtitle1,
             headline3: headline3,

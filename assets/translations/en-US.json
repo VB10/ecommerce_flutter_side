@@ -1,44 +1,53 @@
 {
-    "tab":{
-        "signUp":"Sign Up ",
-        "login":"Login ",
-        "forgot":"Forgot Password "
+    "tab": {
+        "signUp": "Sign Up ",
+        "login": "Login ",
+        "forgot": "Forgot Password "
     },
-    "login":{
-        "dontHaveAccount":"Don't have an account? Swipe left to",
-        "createAccount":"Create a new account",
-        "forgot":"Enter the email address you used to create your account and we will email you a link to reset your password"
+    "login": {
+        "dontHaveAccount": "Don't have an account? Swipe left to",
+        "createAccount": "Create a new account",
+        "forgot": "Enter the email address you used to create your account and we will email you a link to reset your password"
     },
-    "register":{
-        "createAccountLabel":"By creating an account, you agree to our",
+    "register": {
+        "createAccountLabel": "By creating an account, you agree to our",
         "termsAndPrivaciy": "Terms of Service, Privacy Policy"
     },
-    "label":{
-        "mail":"EMAIL",
-        "userName":"USERNAME",
-        "password":"PASSWORD"
+    "label": {
+        "mail": "EMAIL",
+        "userName": "USERNAME",
+        "password": "PASSWORD"
     },
-    "validator":{
-        "errorPassword":"Password field minumum needs 6 character",
-        "errorEmpty":"This field doesn't be empty",
-        "errorEmail":"Feild doesn't like email"
+    "validator": {
+        "errorPassword": "Password field minumum needs 6 character",
+        "errorEmpty": "This field doesn't be empty",
+        "errorEmail": "Feild doesn't like email"
     },
-    "button":{
-        "signup":"SignUp",
-        "send":"Send"
-    },"home":{
-        "categories":"Categories",
-        "latest":"Latest",
-        "seeAll":"See All"
+    "button": {
+        "signup": "SignUp",
+        "send": "Send",
+        "clear": "Clear"
     },
-    "homeTab":{
-        "home":"Home",
-        "search":"Search",
-        "cart":"Cart",
-        "profile":"Profile",
-        "more":"More"
+    "home": {
+        "categories": "Categories",
+        "latest": "Latest",
+        "seeAll": "See All"
     },
-    "splash":{
-        "loading":"Loading..."
+    "serach": {
+        "searchSomething": "Search Something",
+        "recentlyView": "Recenlty Viewed"
+    },
+    "homeTab": {
+        "home": "Home",
+        "search": "Search",
+        "cart": "Cart",
+        "profile": "Profile",
+        "more": "More"
+    },
+    "splash": {
+        "loading": "Loading..."
+    },
+    "profile": {
+        "editProfile": "Edit Profile"
     }
 }

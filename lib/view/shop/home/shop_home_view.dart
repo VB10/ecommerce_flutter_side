@@ -13,6 +13,7 @@ import '../../../product/model/product/product_model.dart';
 import '../../../product/widget/card/product_normal_card.dart';
 import '../../../product/widget/padding/paddig_widgets.dart';
 import '../../../product/widget/row/categories_row.dart';
+import '../../../product/widget/text/title_text.dart';
 import 'model/category_model.dart';
 import 'service/home_shop_service.dart';
 import 'view_model/shop_home_view_model.dart';
@@ -47,8 +48,7 @@ class ShopHomeView extends StatelessWidget with BaseState {
             context.emptySizedHeightBoxLow,
             Observer(builder: (_) => _categoriesProducts(context, viewModel.categories)),
             context.emptySizedHeightBoxLow,
-            PaddingNormal(child: Text(LocaleKeys.home_latest.tr(), style: context.textTheme.headline3)),
-            context.emptySizedHeightBoxLow,
+            PaddingNormal(child: TitleText(LocaleKeys.home_latest.tr(), context: context)),
             Observer(builder: (_) => _latestProducts(context, viewModel.latests)),
             context.emptySizedHeightBoxLow,
             Observer(builder: (_) => _bottomProducts(viewModel.products, context))
@@ -58,11 +58,11 @@ class ShopHomeView extends StatelessWidget with BaseState {
     );
   }
 
-  PaddingNormal _titleHeaderText(BuildContext context) {
+  Widget _titleHeaderText(BuildContext context) {
     return PaddingNormal(
         child: Row(
       children: [
-        Text(LocaleKeys.home_categories.tr(), style: context.textTheme.headline3),
+        TitleText(LocaleKeys.home_categories.tr(), context: context),
         const Spacer(),
         TextButton.icon(
             onPressed: () {},

@@ -16,6 +16,10 @@ class ProjectNetworkManager {
   late NetworkConfig _config;
   ProjectNetworkManager._init() {
     _config = NetworkConfig();
-    networkManager = NetworkManager(options: _config.options, isEnableLogger: true, errorModel: ProjectErrorModel());
+    networkManager = NetworkManager(
+      options: _config.options,
+      isEnableLogger: false,
+      errorModel: ProjectErrorModel(),
+    );
   }
 }
