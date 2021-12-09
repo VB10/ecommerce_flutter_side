@@ -13,6 +13,7 @@ class ShopTabView extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+        appBar: AppBar(),
         body: TabBarView(children: _items.map((e) => e.page).toList()),
         bottomNavigationBar: BottomAppBar(
           child: TabBar(tabs: _items.map((e) => Tab(text: e.title.tr(), icon: Icon(e.icon))).toList()),

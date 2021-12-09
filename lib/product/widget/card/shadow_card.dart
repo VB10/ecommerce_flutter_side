@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gow_mobile/product/widget/shadow/card_shadow.dart';
 import 'package:kartal/kartal.dart';
 
 class ShadowCard extends Container {
@@ -8,13 +9,15 @@ class ShadowCard extends Container {
           child: child,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(context.lowRadius),
-              boxShadow: [
-                BoxShadow(
-                    color: context.colorScheme.primaryVariant,
-                    offset: const Offset(0, 8),
-                    blurRadius: 15,
-                    spreadRadius: 0)
-              ],
+              boxShadow: [CardShadow(context)],
               color: context.colorScheme.onSecondary),
+        );
+
+  ShadowCard.circle({Key? key, required BuildContext context, required Widget child})
+      : super(
+          key: key,
+          child: child,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle, boxShadow: [CardShadow(context)], color: context.colorScheme.onSecondary),
         );
 }
