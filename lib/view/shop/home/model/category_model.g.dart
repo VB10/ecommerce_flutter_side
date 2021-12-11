@@ -6,12 +6,11 @@ part of 'category_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CategoryModel _$CategoryModelFromJson(Map<String, dynamic> json) {
-  return CategoryModel()
-    ..id = json['id'] as String?
-    ..image = json['image'] as String?
-    ..name = json['name'] as String?;
-}
+CategoryModel _$CategoryModelFromJson(Map<String, dynamic> json) =>
+    CategoryModel()
+      ..id = json['id'] as String?
+      ..image = json['image'] as String?
+      ..name = json['name'] as String?;
 
 Map<String, dynamic> _$CategoryModelToJson(CategoryModel instance) =>
     <String, dynamic>{
@@ -20,11 +19,9 @@ Map<String, dynamic> _$CategoryModelToJson(CategoryModel instance) =>
       'name': instance.name,
     };
 
-LatestModel _$LatestModelFromJson(Map<String, dynamic> json) {
-  return LatestModel()
-    ..id = json['id'] as String?
-    ..image = json['image'] as String?;
-}
+LatestModel _$LatestModelFromJson(Map<String, dynamic> json) => LatestModel()
+  ..id = json['id'] as String?
+  ..image = json['image'] as String?;
 
 Map<String, dynamic> _$LatestModelToJson(LatestModel instance) =>
     <String, dynamic>{

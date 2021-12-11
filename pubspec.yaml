@@ -28,8 +28,8 @@ dependencies:
   easy_localization_loader: ^1.0.0
   flutter_mobx: ^2.0.1
   font_awesome_flutter: ^9.0.0
-  json_annotation: ^4.0.1
-  json_serializable: ^4.1.0
+
+  # Google
   vexana: ^2.2.1
   mobx: ^2.0.0
 
@@ -44,6 +44,8 @@ dependencies:
   provider: ^6.0.0
   google_fonts: ^2.1.0
   sizer: ^2.0.15
+  json_serializable: ^6.1.1
+  json_annotation: ^4.4.0
 
 dev_dependencies:
   flutter_test:

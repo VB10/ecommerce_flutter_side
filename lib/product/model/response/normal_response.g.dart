@@ -6,11 +6,10 @@ part of 'normal_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-NormalResponseModel _$NormalResponseModelFromJson(Map<String, dynamic> json) {
-  return NormalResponseModel(
-    message: json['message'] as String?,
-  );
-}
+NormalResponseModel _$NormalResponseModelFromJson(Map<String, dynamic> json) =>
+    NormalResponseModel(
+      message: json['message'] as String?,
+    );
 
 Map<String, dynamic> _$NormalResponseModelToJson(
         NormalResponseModel instance) =>

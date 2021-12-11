@@ -36,15 +36,18 @@ class _IconPath {
   final String invite = 'ic_invite'.toIcon;
   final String language = 'ic_language'.toIcon;
   final String legal = 'ic_legal'.toIcon;
-  final String notification = 'ic_notification'.toIcon;
+  final String notification = 'ic_notifications'.toIcon;
   final String payment = 'ic_payment'.toIcon;
   final String padingPayment = 'ic_pending_payment'.toIcon;
-  final String padingShipment = 'ic_pending_shipment'.toIcon;
+  final String padingShipment = 'ic_pending_shipments'.toIcon;
   final String privacy = 'ic_privacy'.toIcon;
   final String rate = 'ic_rate'.toIcon;
   final String shipping = 'ic_shipping'.toIcon;
   final String suggest = 'ic_suggest'.toIcon;
   final String support = 'ic_support'.toIcon;
+  final String message = 'ic_message'.toIcon;
+  // final String notification = 'ic_support'.toIcon;
+
 }
 
 extension _ImagePathPrefix on String {

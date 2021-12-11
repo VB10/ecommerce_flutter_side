@@ -48,6 +48,24 @@
         "loading": "Loading..."
     },
     "profile": {
-        "editProfile": "Edit Profile"
+        "editProfile": "Edit Profile",
+        "allMyOrder": "All My Orders",
+        "pendingShipment": "Pending Shipments",
+        "pendingPayments": "Pending Payments",
+        "finishgedOrders": "Finished Orders",
+        "inviteFriends": "Invite Friends",
+        "customerSupport": "Customer Support",
+        "rateApp": "Rate Our App",
+        "makeASuggestion": "Make A Suggestion"
+    },
+    "more": {
+        "shippingAdress": "Shipping Adress",
+        "paymentMethod": "Payment Method",
+        "currency": "Currency",
+        "language": "Language",
+        "notificationSettings": "Notification Settings",
+        "privacy": "Privacy Policy",
+        "faq": "Frequently Asked Questions",
+        "legal": "Legal Information"
     }
 }

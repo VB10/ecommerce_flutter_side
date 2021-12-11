@@ -30,17 +30,6 @@ class ShopHomeView extends StatelessWidget with BaseState {
         model.init();
       },
       builder: (BuildContext context, ShopHomeViewModel viewModel) => Scaffold(
-        appBar: AppBar(
-          leading: Observer(
-            builder: (_) {
-              return viewModel.isPageLoadig ? const Center(child: CircularProgressIndicator()) : const SizedBox();
-            },
-          ),
-          actions: [
-            _messageButton(context),
-            _notificationButton(),
-          ],
-        ),
         body: ListView(
           shrinkWrap: true,
           children: [
@@ -72,29 +61,6 @@ class ShopHomeView extends StatelessWidget with BaseState {
       ],
     ));
   }
-
-  IconButton _messageButton(BuildContext context) {
-    return IconButton(
-        onPressed: () {},
-        icon: Stack(
-          children: [
-            const Icon(Icons.message_outlined),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              child: CircleAvatar(
-                radius: 7,
-                backgroundColor: Colors.red,
-                child: FittedBox(
-                    child: Text('5',
-                        style: context.textTheme.subtitle1?.copyWith(color: context.colorScheme.onSecondary))),
-              ),
-            )
-          ],
-        ));
-  }
-
-  IconButton _notificationButton() => IconButton(onPressed: () {}, icon: const Icon(Icons.notifications_none_outlined));
 
   Widget _categoriesProducts(BuildContext context, List<CategoryModel> items) {
     return items.isEmpty

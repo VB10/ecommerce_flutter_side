@@ -6,4 +6,5 @@ class WidgetSize {
   final Size cardNormalSize = Size(50.w, 20.h);
 
   static const double cardSmallWidth = 18;
+  static const double circleSmallHeight = 16;
 }

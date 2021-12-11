@@ -40,6 +40,23 @@ abstract class  LocaleKeys {
   static const splash_loading = 'splash.loading';
   static const splash = 'splash';
   static const profile_editProfile = 'profile.editProfile';
+  static const profile_allMyOrder = 'profile.allMyOrder';
+  static const profile_pendingShipment = 'profile.pendingShipment';
+  static const profile_pendingPayments = 'profile.pendingPayments';
+  static const profile_finishgedOrders = 'profile.finishgedOrders';
+  static const profile_inviteFriends = 'profile.inviteFriends';
+  static const profile_customerSupport = 'profile.customerSupport';
+  static const profile_rateApp = 'profile.rateApp';
+  static const profile_makeASuggestion = 'profile.makeASuggestion';
   static const profile = 'profile';
+  static const more_shippingAdress = 'more.shippingAdress';
+  static const more_paymentMethod = 'more.paymentMethod';
+  static const more_currency = 'more.currency';
+  static const more_language = 'more.language';
+  static const more_notificationSettings = 'more.notificationSettings';
+  static const more_privacy = 'more.privacy';
+  static const more_faq = 'more.faq';
+  static const more_legal = 'more.legal';
+  static const more = 'more';
 
 }

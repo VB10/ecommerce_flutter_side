@@ -32,9 +32,12 @@ class LightColors implements IColors {
   late final Color? bottomAppBarColor;
 
   @override
+  late final Color? cardShadowColor;
+  @override
   Color? textColor;
 
   LightColors() {
+    cardShadowColor = colors.athensGray;
     bottomAppBarColor = colors.white;
     appBarColor = colors.lighterGrey;
     textColor = Colors.black;

@@ -14,7 +14,8 @@ class _AppColors {
   final Color lightGrey = const Color(0xffdbe2ed);
   final Color darkerGrey = const Color(0xff404e5a);
   final Color darkGrey = const Color(0xff4e5d6a);
-  final Color bitterSweet = const Color(0xffFF6969);
+  final Color bitterSweet = const Color(0xFFFF6969);
+  final Color athensGray = const Color(0xFFe7eaf0);
 }
 
 abstract class IColors {
@@ -28,6 +29,7 @@ abstract class IColors {
   ColorScheme? colorScheme;
   Color? textColor;
   Color? bottomAppBarColor;
+  Color? cardShadowColor;
 
   Color? cursorColor;
 }

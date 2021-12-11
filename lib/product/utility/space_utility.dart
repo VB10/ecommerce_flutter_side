@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class SpaceUtility {
   /// [value] is 2.0
   static const double spacingXSSs = 1.5;
@@ -55,4 +57,10 @@ class SpaceUtility {
 
   /// [value] is 100.0
   static const double spacingXL = 100;
+}
+
+extension SpaceUtilityExtension on double {
+  Widget toEmptyHeight() {
+    return SizedBox(height: this);
+  }
 }

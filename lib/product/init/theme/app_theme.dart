@@ -18,6 +18,7 @@ abstract class ThemeManager {
         bottomAppBarColor: theme.colors.scaffoldBackgroundColor,
         brightness: theme.colors.colorScheme?.brightness,
         canvasColor: Colors.red,
+        cardTheme: CardTheme(shadowColor: theme.colors.cardShadowColor),
         progressIndicatorTheme: ProgressIndicatorThemeData(color: theme.colors.colors.bitterSweet),
         elevatedButtonTheme:
             ElevatedButtonThemeData(style: ElevatedButton.styleFrom(onPrimary: theme.colors.colorScheme?.onSecondary)),

@@ -44,4 +44,7 @@ class DarkColors implements IColors {
 
   @override
   Color? bottomAppBarColor;
+
+  @override
+  Color? cardShadowColor;
 }
