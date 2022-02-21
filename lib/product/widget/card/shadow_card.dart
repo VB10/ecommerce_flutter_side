@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gow_mobile/product/widget/shadow/card_shadow.dart';
+import '../shadow/card_shadow.dart';
 import 'package:kartal/kartal.dart';
 
 class ShadowCard extends Container {

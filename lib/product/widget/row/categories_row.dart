@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:kartal/src/context_extension.dart';
 
 import '../../../view/shop/home/model/category_model.dart';
-import '../padding/paddig_widgets.dart';
 
 class CategoriesRow extends StatelessWidget {
   const CategoriesRow({Key? key, required this.items}) : super(key: key);

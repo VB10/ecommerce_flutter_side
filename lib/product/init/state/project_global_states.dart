@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:gow_mobile/product/init/navigation/navigation_manager.dart';
+import '../navigation/navigation_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 

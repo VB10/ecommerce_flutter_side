@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../../../product/widget/button/login_button.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../../../core/components/input/icon_form_field.dart';
@@ -9,6 +8,7 @@ import '../../../../core/init/constants/image_constants.dart';
 import '../../../../product/base/base_state.dart';
 import '../../../../product/init/lang/locale_keys.g.dart';
 import '../../../../product/service/auth/authentication_service.dart';
+import '../../../../product/widget/button/login_button.dart';
 import '../viewModel/forgot_view_model.dart';
 
 // ignore: use_key_in_widget_constructorss

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gow_mobile/product/utility/padding/padding_only.dart';
-import 'package:gow_mobile/product/utility/padding/padding_symetrict.dart';
-import 'package:gow_mobile/product/utility/space_utility.dart';
-import 'package:gow_mobile/product/widget/card/shadow_card.dart';
+import '../../utility/padding/padding_only.dart';
+import '../../utility/padding/padding_symetrict.dart';
+import '../../utility/space_utility.dart';
+import 'shadow_card.dart';
 import 'package:kartal/src/context_extension.dart';
 import 'package:sizer/sizer.dart';
 
@@ -40,15 +40,15 @@ class CardPaymentCard extends StatelessWidget {
                     '\$49.99',
                     style: context.textTheme.subtitle1?.copyWith(color: context.colorScheme.onError),
                   ),
-                  SizedBox(height: SpaceUtility.spacingM),
+                  const SizedBox(height: SpaceUtility.spacingM),
                   Row(
                     children: [
-                      InkWell(child: Icon(Icons.add)),
+                      const InkWell(child: Icon(Icons.add)),
                       Padding(
                         padding: PagePaddingSymetrict.horizontalNormal(),
-                        child: Text('1'),
+                        child: const Text('1'),
                       ),
-                      InkWell(child: Icon(Icons.remove)),
+                      const InkWell(child: Icon(Icons.remove)),
                     ],
                   ),
                   const Divider()

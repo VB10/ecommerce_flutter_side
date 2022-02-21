@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gow_mobile/core/init/app/base/base_view_model.dart';
-import 'package:gow_mobile/product/model/email/email_model.dart';
-import 'package:gow_mobile/product/service/auth/authentication_service.dart';
+import '../../../../core/init/app/base/base_view_model.dart';
+import '../../../../product/model/email/email_model.dart';
+import '../../../../product/service/auth/authentication_service.dart';
 import 'package:mobx/mobx.dart';
 
 part 'forgot_view_model.g.dart';

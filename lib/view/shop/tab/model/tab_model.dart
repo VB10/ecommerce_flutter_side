@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gow_mobile/view/shop/cart_payment/cart_payment_view.dart';
-import 'package:gow_mobile/view/shop/more/more_view.dart';
+import '../../cart_payment/cart_payment_view.dart';
+import '../../more/more_view.dart';
 
 import '../../../../product/init/lang/locale_keys.g.dart';
 import '../../home/shop_home_view.dart';
