@@ -1,0 +1,71 @@
+{
+    "tab": {
+        "signUp": "Sign Up ",
+        "login": "Login ",
+        "forgot": "Forgot Password "
+    },
+    "login": {
+        "dontHaveAccount": "Don't have an account? Swipe left to",
+        "createAccount": "Create a new account",
+        "forgot": "Enter the email address you used to create your account and we will email you a link to reset your password"
+    },
+    "register": {
+        "createAccountLabel": "By creating an account, you agree to our",
+        "termsAndPrivaciy": "Terms of Service, Privacy Policy"
+    },
+    "label": {
+        "mail": "EMAIL",
+        "userName": "USERNAME",
+        "password": "PASSWORD"
+    },
+    "validator": {
+        "errorPassword": "Password field minumum needs 6 character",
+        "errorEmpty": "This field doesn't be empty",
+        "errorEmail": "Feild doesn't like email"
+    },
+    "button": {
+        "signup": "SignUp",
+        "send": "Send",
+        "clear": "Clear"
+    },
+    "home": {
+        "categories": "Categories",
+        "latest": "Latest",
+        "seeAll": "See All"
+    },
+    "serach": {
+        "searchSomething": "Search Something",
+        "recentlyView": "Recenlty Viewed"
+    },
+    "homeTab": {
+        "home": "Home",
+        "search": "Search",
+        "cart": "Cart",
+        "profile": "Profile",
+        "more": "More"
+    },
+    "splash": {
+        "loading": "Loading..."
+    },
+    "profile": {
+        "editProfile": "Edit Profile",
+        "allMyOrder": "All My Orders",
+        "pendingShipment": "Pending Shipments",
+        "pendingPayments": "Pending Payments",
+        "finishgedOrders": "Finished Orders",
+        "inviteFriends": "Invite Friends",
+        "customerSupport": "Customer Support",
+        "rateApp": "Rate Our App",
+        "makeASuggestion": "Make A Suggestion"
+    },
+    "more": {
+        "shippingAdress": "Shipping Adress",
+        "paymentMethod": "Payment Method",
+        "currency": "Currency",
+        "language": "Language",
+        "notificationSettings": "Notification Settings",
+        "privacy": "Privacy Policy",
+        "faq": "Frequently Asked Questions",
+        "legal": "Legal Information"
+    }
+}

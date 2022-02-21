@@ -3,52 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../core/init/app/base/base_view_model.dart';
+import '../../../../product/service/auth/authentication_service.dart';
 import '../model/login_model.dart';
-import '../model/user_model.dart';
-import '../service/login_service.dart';
 
 part 'login_view_model.g.dart';
 
 class LoginViewModel = _LoginViewModelBase with _$LoginViewModel;
 
 abstract class _LoginViewModelBase with Store, BaseViewModel {
-  GlobalKey<FormState> loginFormKey = GlobalKey();
-  GlobalKey<ScaffoldState> loginScaffoldKey = GlobalKey();
-  LoginService _service = LoginService();
-
-  @observable
-  bool formAutoValidate = false;
-
-  TextEditingController userNameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-
-  LoginModel get loginModel => LoginModel(email: userNameController.text, password: passwordController.text);
-
+  late final IAuthenticationService _authenticationService;
   @observable
   String description = '';
 
-  void setContext(BuildContext context) {
-    this.context = context;
+  _LoginViewModelBase(IAuthenticationService service) {
+    _authenticationService = service;
   }
 
-  Future<void> checkUserLoginRequest() async {
-    if (checkSignUpForm()) {
-      final response = await _service.loginUserRequest(loginModel);
+  @override
+  void setContext(BuildContext context) => this.context = context;
+  @override
+  void init() {}
 
-      // if (response is UserModel == false) {
-      //   final errorModel = response as NetworkBaseError;
-      //   loginScaffoldKey.currentState!.showSnackBar(SnackBar(content: Text(errorModel.message!)));
-      // }
-    }
+  Future<void> checkUserLoginRequest(LoginModel model) async {
+    final response = await _authenticationService.loginUserRequest(model);
   }
 
-  @action
-  bool checkSignUpForm() {
-    if (loginFormKey.currentState!.validate()) {
-      return true;
-    } else {
-      formAutoValidate = true;
-      return false;
-    }
-  }
+  void customDispose() {}
 }

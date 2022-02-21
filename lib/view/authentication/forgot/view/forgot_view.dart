@@ -1,53 +1,61 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 
 import '../../../../core/components/input/icon_form_field.dart';
-import '../../../../core/components/row/login_form_row.dart';
-import '../../../../core/extensions/context_extension.dart';
+import '../../../../core/init/app/base/base_view.dart';
 import '../../../../core/init/constants/image_constants.dart';
-import '../../../widget/buttons/sign_up.dart';
+import '../../../../product/base/base_state.dart';
+import '../../../../product/init/lang/locale_keys.g.dart';
+import '../../../../product/service/auth/authentication_service.dart';
+import '../../../../product/widget/button/login_button.dart';
+import '../viewModel/forgot_view_model.dart';
 
-class ForgotView extends StatefulWidget {
-  @override
-  _ForgotViewState createState() => _ForgotViewState();
-}
+// ignore: use_key_in_widget_constructorss
 
-class _ForgotViewState extends State<ForgotView> {
+class ForgotView extends StatelessWidget with BaseState {
+  const ForgotView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return LoginFormRow(
-      child: Column(
-        children: [
-          Spacer(flex: 2),
-          Text(
-            "Enter the email address you used to create your account and we will email you a link to reset your password",
-            style: titleTextStyle,
-            textAlign: TextAlign.center,
-          ),
-          Spacer(),
-          buildCardForm,
-          Spacer(),
-          SignUpButton(
-            onPressed: () {},
-          ).toSendEmailButton,
-          Spacer(flex: 10),
-        ],
-      ),
+    return BaseView<ForgotViewModel>(
+      model: ForgotViewModel(AuthenticationService(networkManager)),
+      onModelReady: (model) {
+        model.setContext(context);
+        model.init();
+      },
+      builder: (BuildContext context, ForgotViewModel value) => buildBodyView(context, value),
     );
   }
 
-  TextStyle get titleTextStyle => context.theme.subtitle2!.copyWith(fontWeight: FontWeight.w200);
+  Column buildBodyView(BuildContext context, ForgotViewModel viewModel) {
+    return Column(
+      children: [
+        const Spacer(flex: 2),
+        Text(LocaleKeys.login_forgot.tr(),
+            style: context.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.w200), textAlign: TextAlign.center),
+        const Spacer(),
+        buildCardForm(viewModel.textEditingController),
+        const Spacer(),
+        LoginButton(
+          title: LocaleKeys.button_send.tr(),
+          onCompleted: () async {
+            await viewModel.sendToResetEmail();
+          },
+        ),
+        const Spacer(flex: 10),
+      ],
+    );
+  }
 
-  Card get buildCardForm {
+  Widget buildCardForm(TextEditingController controller) {
     return Card(
-      child: Form(
-          child: Column(
-        children: [
-          IconFormTextField(
-            label: " EMAIL",
-            iconPath: ImageConstatns.instance!.mailSVG,
-          ),
-        ],
-      )),
+      child: IconFormTextField(
+        label: ' ${LocaleKeys.label_mail.tr()}',
+        iconPath: ImageConstatns.instance.mail,
+        controller: controller,
+        validator: (value) => (value ?? '').isValidEmail ? null : LocaleKeys.validator_errorEmail.tr(),
+      ),
     );
   }
 }

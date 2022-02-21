@@ -8,9 +8,9 @@ class LoginFormRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Spacer(),
+        const Spacer(),
         Expanded(flex: 18, child: child),
-        Spacer(),
+        const Spacer(),
       ],
     );
   }

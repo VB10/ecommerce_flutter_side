@@ -1,5 +1,6 @@
 import 'package:vexana/vexana.dart';
 
+import '../../model/error/project_error_model.dart';
 import 'network_config.dart';
 
 class ProjectNetworkManager {
@@ -12,9 +13,13 @@ class ProjectNetworkManager {
   }
 
   late INetworkManager networkManager;
-  late NetworkConfig config;
+  late NetworkConfig _config;
   ProjectNetworkManager._init() {
-    config = NetworkConfig();
-    networkManager = NetworkManager(options: config.options);
+    _config = NetworkConfig();
+    networkManager = NetworkManager(
+      options: _config.options,
+      isEnableLogger: false,
+      errorModel: ProjectErrorModel(),
+    );
   }
 }

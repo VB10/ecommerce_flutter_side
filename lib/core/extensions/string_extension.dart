@@ -2,11 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 
 import '../init/constants/regex_constants.dart';
 
-extension ImagePathPrefix on String {
-  String get toPNG => "assets/icon/$this.png";
-  String get toSVG => "assets/svg/$this.svg";
-}
-
 extension StringLocalization on String {
   String get locale => this.tr();
 }
@@ -18,10 +13,14 @@ extension StringValidator on String {
   }
 
   String? get isValidUserName {
-    return RegExp(RegexConstants.instance!.userNameRegex).hasMatch(this) ? null : "The value has a minimum of four characters.";
+    return RegExp(RegexConstants.instance!.userNameRegex).hasMatch(this)
+        ? null
+        : "The value has a minimum of four characters.";
   }
 
   String? get isValidPassword {
-    return RegExp(RegexConstants.instance!.passwordRegex).hasMatch(this) ? null : "The value has a minimum of six characters.";
+    return RegExp(RegexConstants.instance!.passwordRegex).hasMatch(this)
+        ? null
+        : "The value has a minimum of six characters.";
   }
 }
