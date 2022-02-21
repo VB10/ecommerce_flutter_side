@@ -1,6 +1,6 @@
-import 'package:easy_localization/src/public_ext.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:kartal/src/context_extension.dart';
+import 'package:kartal/kartal.dart';
 
 import '../../../core/init/constants/image_constants.dart';
 import '../../../product/init/lang/locale_keys.g.dart';

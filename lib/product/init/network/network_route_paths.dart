@@ -1,9 +1,7 @@
 class NetworkRoutePath {
   static NetworkRoutePath? _instance;
   static NetworkRoutePath? get instance {
-    if (_instance == null) {
-      _instance = NetworkRoutePath._init();
-    }
+    _instance ??= NetworkRoutePath._init();
     return _instance;
   }
 
