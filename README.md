@@ -1,16 +1,17 @@
-# gow_mobile
+# Ecommerce Flutter Project
 
-A new Flutter project.
+It created for proffesinal app developing processes.
 
-## Getting Started
+## Design
 
-This project is a starting point for a Flutter application.
+You can download to the design in github folder.
+Zeplin: https://zpl.io/bJL5Xp6
+XD Resources: [File](https://github.com/VB10/ecommerce_flutter_side/blob/feature/new_release/github/Screen%20Shot%202022-02-22%20at%2020.32.13.png?raw=true)
 
-A few resources to get you started if this is your first Flutter project:
+## Contribution
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+You can always send me PR after i'm looking your new changes for your to add.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
