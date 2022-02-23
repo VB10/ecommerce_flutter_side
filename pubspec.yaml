@@ -1,20 +1,8 @@
 name: gow_mobile
 description: A new Flutter project.
 
-# The following line prevents the package from being accidentally published to
-# pub.dev using `pub publish`. This is preferred for private packages.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
 environment:
@@ -23,48 +11,49 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+
+  # Translations
   easy_localization: ^3.0.0
   easy_localization_loader: ^1.0.0
-  flutter_mobx: ^2.0.1
-  font_awesome_flutter: ^9.0.0
 
-  # Google
-  vexana: ^2.2.1
+  # State Management
+  flutter_mobx: ^2.0.1
   mobx: ^2.0.0
+  provider: ^6.0.0
 
   # Route
-  auto_route: ^3.1.3
+  auto_route: ^3.2.4
+
+  # Favourites
+  kartal: ^2.0.0
+  vexana: ^2.2.1
 
   # Utility
-  lottie: ^1.1.0
-  kartal: ^2.0.0
-  flutter_svg: ^1.0.3
   cached_network_image: ^3.1.0
-  provider: ^6.0.0
+  cupertino_icons: ^1.0.2
+  device_preview: ^1.0.0
+  flutter_svg: ^1.0.3
+  font_awesome_flutter: ^9.0.0
   google_fonts: ^2.1.0
-  sizer: ^2.0.15
-  json_serializable: ^6.1.1
   json_annotation: ^4.4.0
+  lottie: ^1.1.0
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^1.0.4
+  # Code generators
+  auto_route_generator: ^3.2.3
   build_runner: ^2.1.1
+  json_serializable: ^6.1.1
   mobx_codegen: ^2.0.2
-  device_preview: ^1.0.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-# The following section is specific to Flutter.
+  # Rules
+  flutter_lints: ^1.0.4
+
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/translations/
     - assets/image/
