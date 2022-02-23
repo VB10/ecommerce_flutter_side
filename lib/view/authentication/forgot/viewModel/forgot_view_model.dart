@@ -1,8 +1,11 @@
+import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
+import 'package:mobx/mobx.dart';
+
 import '../../../../core/init/app/base/base_view_model.dart';
 import '../../../../product/model/email/email_model.dart';
 import '../../../../product/service/auth/authentication_service.dart';
-import 'package:mobx/mobx.dart';
 
 part 'forgot_view_model.g.dart';
 
@@ -22,7 +25,9 @@ abstract class _ForgotViewModelBase with Store, BaseViewModel {
   void init() {}
 
   Future<void> sendToResetEmail() async {
-    final response = await _authenticationService.forgotPassword(EmailModel(email: textEditingController.text));
-    print(response?.message);
+    final response =
+        await _authenticationService.forgotPassword(EmailModel(email: textEditingController.text));
+
+    developer.log('${response?.message}');
   }
 }

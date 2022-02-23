@@ -9,12 +9,12 @@ part of 'sign_up_model.dart';
 SignUpModel _$SignUpModelFromJson(Map<String, dynamic> json) => SignUpModel(
       email: json['email'] as String?,
       password: json['password'] as String?,
-      name: json['name'] as String?,
+      displayName: json['displayName'] as String?,
     );
 
 Map<String, dynamic> _$SignUpModelToJson(SignUpModel instance) =>
     <String, dynamic>{
       'email': instance.email,
       'password': instance.password,
-      'name': instance.name,
+      'displayName': instance.displayName,
     };

@@ -9,18 +9,40 @@ import '../field/password_field.dart';
 
 class LoginFormWidget extends StatefulWidget {
   const LoginFormWidget({Key? key, required this.onComplete}) : super(key: key);
+
   final Future<void> Function(LoginModel model) onComplete;
+
   @override
   _LoginFormWidgetState createState() => _LoginFormWidgetState();
 }
 
 class _LoginFormWidgetState extends State<LoginFormWidget> {
-  final TextEditingController _userNameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  late final TextEditingController _userNameController;
+  late final TextEditingController _passwordController;
 
-  final GlobalKey<FormState> _loginFormKey = GlobalKey();
+  late final GlobalKey<FormState> _loginFormKey;
 
-  bool _formAutoValidate = false;
+  late final bool _formAutoValidate;
+
+  @override
+  void initState() {
+    super.initState();
+    _userNameController = TextEditingController();
+    _passwordController = TextEditingController();
+
+    _loginFormKey = GlobalKey<FormState>();
+
+    _formAutoValidate = false;
+  }
+
+  @override
+  void dispose() {
+    _userNameController.dispose();
+    _passwordController.dispose();
+
+    _loginFormKey.currentState?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +67,12 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
 
   Future<void> _checkSignUpForm() async {
     if (_loginFormKey.currentState?.validate() ?? false) {
-      await widget.onComplete(LoginModel(email: _userNameController.text, password: _passwordController.text));
+      await widget.onComplete(
+        LoginModel(
+          email: _userNameController.text.trim(),
+          password: _passwordController.text,
+        ),
+      );
     } else {
       if (_formAutoValidate) return;
       _formAutoValidate = true;

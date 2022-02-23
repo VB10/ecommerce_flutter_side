@@ -1,34 +1,53 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../init/lang/locale_keys.g.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../../../core/components/input/icon_form_field.dart';
 import '../../../../core/init/constants/image_constants.dart';
-import '../../../../view/authentication/login/model/login_model.dart';
+import '../../../view/authentication/signup/model/sign_up_model.dart';
+import '../../init/lang/locale_keys.g.dart';
 import '../button/login_button.dart';
 import '../field/password_field.dart';
 
-import 'package:kartal/kartal.dart';
-import 'package:easy_localization/easy_localization.dart';
-
 class SignupFormView extends StatefulWidget {
   const SignupFormView({Key? key, required this.onComplete}) : super(key: key);
-  final Future<void> Function(LoginModel model) onComplete;
+
+  final Future<void> Function(SignUpModel model) onComplete;
 
   @override
   _SignupFormViewState createState() => _SignupFormViewState();
 }
 
 class _SignupFormViewState extends State<SignupFormView> {
-  final TextEditingController _userNameController = TextEditingController();
-  final TextEditingController _userMailController = TextEditingController();
+  late final TextEditingController _userNameController;
+  late final TextEditingController _userMailController;
+  late final TextEditingController _passwordController;
 
-  final TextEditingController _passwordController = TextEditingController();
+  late final GlobalKey<FormState> _loginFormKey;
 
-  final GlobalKey<FormState> _loginFormKey = GlobalKey();
+  late final bool _formAutoValidate;
 
-  bool _formAutoValidate = false;
+  @override
+  void initState() {
+    super.initState();
+    _userNameController = TextEditingController();
+    _userMailController = TextEditingController();
+    _passwordController = TextEditingController();
+
+    _loginFormKey = GlobalKey<FormState>();
+
+    _formAutoValidate = false;
+  }
+
+  @override
+  void dispose() {
+    _userNameController.dispose();
+    _userMailController.dispose();
+    _passwordController.dispose();
+
+    _loginFormKey.currentState?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +86,13 @@ class _SignupFormViewState extends State<SignupFormView> {
 
   Future<void> _checkSignUpForm() async {
     if (_loginFormKey.currentState?.validate() ?? false) {
-      await widget.onComplete(LoginModel(email: _userNameController.text, password: _passwordController.text));
+      await widget.onComplete(
+        SignUpModel(
+          displayName: _userNameController.text,
+          email: _userMailController.text.trim(),
+          password: _passwordController.text,
+        ),
+      );
     } else {
       _changeValidate();
     }

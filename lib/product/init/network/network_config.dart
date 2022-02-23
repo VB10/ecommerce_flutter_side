@@ -9,7 +9,10 @@ class NetworkConfig {
 
   NetworkConfig() {
     if (Platform.isAndroid) {
-      baseUrl = 'http://10.0.2.2:3000/';
+      // for Genymotion emulator
+      baseUrl = 'http://10.0.3.2:3000/';
+      // for default AVD emulator
+      // baseUrl = 'http://10.0.2.2:3000/';
     } else {
       baseUrl = 'http://localhost:3000/';
     }

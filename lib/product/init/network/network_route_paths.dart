@@ -9,5 +9,5 @@ class NetworkRoutePath {
 
   final String login = "login";
   final String forgot = "forgot";
-  final String signUp = "signup";
+  final String signUp = "register";
 }
