@@ -1,11 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:mobx/mobx.dart';
-import 'package:provider/provider.dart';
 
 import '../../../../core/init/app/base/base_view_model.dart';
-import '../../../../product/init/navigation/navigation_enums.dart';
-import '../../../../product/init/navigation/navigation_manager.dart';
+import '../../../../product/init/router/app_router.dart';
 
 part 'splash_view_model.g.dart';
 
@@ -17,11 +16,13 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
 
   @override
   void init() {
+    // TODO: Need to check if the user logged in or not
     navigateToHome();
   }
 
   Future<void> navigateToHome() async {
     await Future.delayed(context.durationSlow);
-    context.read<NavigationService>().navigateToPageClear(path: NavigationEnums.login.rawValue);
+
+    context.replaceRoute(AuthenticationTabRoute());
   }
 }

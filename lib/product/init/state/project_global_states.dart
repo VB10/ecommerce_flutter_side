@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import '../navigation/navigation_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -15,6 +14,6 @@ class ProjectGlobalStates {
 
   final List<SingleChildWidget> _independentServices = [
     Provider(create: (context) => ProductContext(context)),
-    Provider(create: (_) => NavigationService()),
+    // Provider(create: (_) => NavigationService()),
   ];
 }

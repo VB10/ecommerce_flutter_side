@@ -7,8 +7,8 @@ import '../forgot/view/forgot_view.dart';
 import '../login/view/login_view.dart';
 import '../signup/view/sign_up_view.dart';
 
-class AuthenticationTabView extends StatelessWidget {
-  AuthenticationTabView({Key? key}) : super(key: key);
+class AuthenticationTabPage extends StatelessWidget {
+  AuthenticationTabPage({Key? key}) : super(key: key);
 
   final List<Widget> _tabbarView = [const SignUpView(), const LoginView(), const ForgotView()];
 
