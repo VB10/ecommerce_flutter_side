@@ -7,9 +7,9 @@ part 'sign_up_model.g.dart';
 class SignUpModel extends INetworkModel<SignUpModel> {
   final String? email;
   final String? password;
-  final String? name;
+  final String? displayName;
 
-  SignUpModel({this.email, this.password, this.name});
+  SignUpModel({this.email, this.password, this.displayName});
 
   @override
   SignUpModel fromJson(Map<String, dynamic> json) => _$SignUpModelFromJson(json);

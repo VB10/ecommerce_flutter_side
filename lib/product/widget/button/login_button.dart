@@ -24,14 +24,19 @@ class _LoginButtonState extends State<LoginButton> {
     return Padding(
       padding: context.paddingLow,
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(primary: context.colorScheme.onError, padding: context.paddingLow),
-        onPressed: () async {
-          _changeLoading();
-          await widget.onCompleted();
-          _changeLoading();
-        },
+        style: ElevatedButton.styleFrom(
+            primary: context.colorScheme.onError, padding: context.paddingLow),
+        onPressed: _isLoading
+            ? () {}
+            : () async {
+                _changeLoading();
+                await widget.onCompleted();
+                _changeLoading();
+              },
         child: Center(
-          child: _isLoading ? CircularProgressIndicator(color: context.colorScheme.onSecondary) : Text(widget.title),
+          child: _isLoading
+              ? CircularProgressIndicator(color: context.colorScheme.onSecondary)
+              : Text(widget.title),
         ),
       ),
     );

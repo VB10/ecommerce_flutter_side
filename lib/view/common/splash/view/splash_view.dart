@@ -8,8 +8,8 @@ import '../../../../product/base/base_state.dart';
 import '../../../../product/init/lang/locale_keys.g.dart';
 import '../viewModel/splash_view_model.dart';
 
-class SplashView extends StatelessWidget with BaseState {
-  const SplashView({Key? key}) : super(key: key);
+class SplashPage extends StatelessWidget with BaseState {
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

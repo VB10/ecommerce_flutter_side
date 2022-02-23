@@ -1,8 +1,12 @@
+import 'dart:developer' as developer;
+
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../core/init/app/base/base_view_model.dart';
+import '../../../../product/init/router/app_router.dart';
 import '../../../../product/service/auth/authentication_service.dart';
 import '../model/login_model.dart';
 
@@ -26,6 +30,12 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
 
   Future<void> checkUserLoginRequest(LoginModel model) async {
     final response = await _authenticationService.loginUserRequest(model);
+
+    developer.log('${response?.email}');
+
+    if (response != null) {
+      context.replaceRoute(ShopTabRoute());
+    }
   }
 
   void customDispose() {}

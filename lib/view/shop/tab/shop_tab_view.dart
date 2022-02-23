@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:kartal/src/context_extension.dart';
+import 'package:kartal/kartal.dart';
 
 import '../../../core/init/constants/image_constants.dart';
 import '../../../product/utility/padding/padding_all.dart';
 import '../../../product/utility/size/widget_size.dart';
 import 'model/tab_model.dart';
 
-class ShopTabView extends StatelessWidget {
-  ShopTabView({Key? key}) : super(key: key);
+class ShopTabPage extends StatelessWidget {
+  ShopTabPage({Key? key}) : super(key: key);
 
   final _items = TabModels.create().tabItems;
 
@@ -25,7 +25,8 @@ class ShopTabView extends StatelessWidget {
         ),
         body: TabBarView(children: _items.map((e) => e.page).toList()),
         bottomNavigationBar: BottomAppBar(
-          child: TabBar(tabs: _items.map((e) => Tab(text: e.title.tr(), icon: Icon(e.icon))).toList()),
+          child:
+              TabBar(tabs: _items.map((e) => Tab(text: e.title.tr(), icon: Icon(e.icon))).toList()),
         ),
       ),
     );
@@ -49,7 +50,8 @@ class ShopTabView extends StatelessWidget {
                   padding: PagePaddingAll.halfNormal(),
                   child: FittedBox(
                       child: Text('5',
-                          style: context.textTheme.subtitle1?.copyWith(color: context.colorScheme.onSecondary))),
+                          style: context.textTheme.subtitle1
+                              ?.copyWith(color: context.colorScheme.onSecondary))),
                 )),
               ),
             )
